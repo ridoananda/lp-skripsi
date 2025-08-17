@@ -1,79 +1,186 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
 
 export default function Home() {
+  const fadeUp = {
+    hidden: { opacity: 0, y: 24 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  };
+  const fadeIn = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.6, ease: "easeOut" } },
+  };
+  const stagger = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.08, delayChildren: 0.1 } },
+  };
+
+  useEffect(() => {
+    const onAnchorClick = (event: MouseEvent) => {
+      const target = event.target as HTMLElement | null;
+      const anchor = target?.closest<HTMLAnchorElement>("a[href^='#']");
+      if (!anchor) return;
+      const href = anchor.getAttribute("href");
+      if (!href || href === "#") return;
+      const id = href.slice(1);
+      const el = document.getElementById(id);
+      if (el) {
+        event.preventDefault();
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    };
+    document.addEventListener("click", onAnchorClick);
+    return () => document.removeEventListener("click", onAnchorClick);
+  }, []);
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
   return (
     <>
       <div className="min-h-screen w-full bg-hero">
-        <header className="w-full max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+        <motion.header
+          initial="hidden"
+          animate="visible"
+          variants={fadeIn}
+          className="w-full max-w-6xl mx-auto px-6 py-5 flex items-center justify-between"
+        >
           <div className="flex items-center gap-3">
             <div className="w-9 h-9 rounded-md bg-black/80 text-white grid place-items-center font-bold">
               eB
             </div>
-            <span className="text-sm font-medium">eBook Skripsi</span>
+            <span className="text-sm font-medium text-white">eBook Skripsi</span>
           </div>
-          <nav className="hidden md:flex items-center gap-6 text-sm">
-            <a href="#preview" className="hover:underline">
+          <nav className="hidden md:flex items-center gap-6 text-white text-sm">
+            <motion.a href="#preview" whileHover={{ y: -1, opacity: 0.9 }} whileTap={{ scale: 0.98 }} className="hover:underline">
               Preview
-            </a>
-            <a href="#testimonial" className="hover:underline">
+            </motion.a>
+            <motion.a href="#testimonial" whileHover={{ y: -1, opacity: 0.9 }} whileTap={{ scale: 0.98 }} className="hover:underline">
               Testimonial
-            </a>
-            <a href="#bonus" className="hover:underline">
+            </motion.a>
+            <motion.a href="#bonus" whileHover={{ y: -1, opacity: 0.9 }} whileTap={{ scale: 0.98 }} className="hover:underline">
               Bonus
-            </a>
-            <a
+            </motion.a>
+            <motion.a
               href="#beli"
+              whileHover={{ y: -2, scale: 1.03 }}
+              whileTap={{ scale: 0.98 }}
               className="ml-4 btn-primary-hero rounded-full px-4 py-2"
             >
               Beli Sekarang
-            </a>
+            </motion.a>
           </nav>
-        </header>
+          <button
+            aria-label="Open menu"
+            className="md:hidden text-white p-2 rounded-md hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40"
+            onClick={() => setMobileOpen(true)}
+          >
+            <Menu size={22} />
+          </button>
+        </motion.header>
+        {mobileOpen && (
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={fadeIn}
+            className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm"
+            onClick={() => setMobileOpen(false)}
+          >
+            <motion.div
+              initial={{ y: -16, opacity: 0 }}
+              animate={{ y: 0, opacity: 1, transition: { duration: 0.25 } }}
+              className="absolute top-0 left-0 right-0 bg-[#0f172a] border-b border-white/10 px-6 py-4"
+              onClick={(e: React.MouseEvent<HTMLDivElement>) => e.stopPropagation()}
+            >
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-md bg-black/80 text-white grid place-items-center font-bold">eB</div>
+                  <span className="text-sm font-medium text-white">eBook Skripsi</span>
+                </div>
+                <button
+                  aria-label="Close menu"
+                  className="text-white p-2 rounded-md hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  <X size={22} />
+                </button>
+              </div>
+              <div className="mt-4 grid gap-2 text-white">
+                <a href="#preview" onClick={() => setMobileOpen(false)} className="px-3 py-2 rounded-md hover:bg-white/10">Preview</a>
+                <a href="#testimonial" onClick={() => setMobileOpen(false)} className="px-3 py-2 rounded-md hover:bg-white/10">Testimonial</a>
+                <a href="#bonus" onClick={() => setMobileOpen(false)} className="px-3 py-2 rounded-md hover:bg-white/10">Bonus</a>
+                <a
+                  href="#beli"
+                  onClick={() => setMobileOpen(false)}
+                  className="mt-2 btn-primary-hero inline-flex items-center justify-center rounded-full px-4 py-2"
+                >
+                  Beli Sekarang
+                </a>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
 
         <main className="w-full max-w-6xl mx-auto px-6 py-10 grid md:grid-cols-2 gap-10 items-center">
-          <section>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 text-white border border-white/20 text-xs font-medium mb-5">
+          <motion.section variants={stagger} initial="hidden" animate="visible">
+            <motion.div variants={fadeUp} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 text-white border border-white/20 text-xs font-medium mb-5">
               <span>🚀 Fast Track</span>
               <span className="text-white/80">Gen Z Edition</span>
-            </div>
-            <h1 className="font-hero-heading font-extrabold text-white text-4xl sm:text-5xl md:text-6xl leading-[1.1] tracking-tight">
+            </motion.div>
+            <motion.h1 variants={fadeUp} className="font-hero-heading font-extrabold text-white text-4xl sm:text-5xl md:text-6xl leading-[1.1] tracking-tight">
               Skripsi Kelar 7 Hari? YES, AI Can Do It! 🚀
-            </h1>
-            <p className="mt-4 text-base sm:text-lg md:text-xl text-white/80 font-hero-sub">
+            </motion.h1>
+            <motion.p variants={fadeUp} className="mt-4 text-base sm:text-lg md:text-xl text-white/80 font-hero-sub">
               Panduan anti-baper & anti-ngaret untuk mahasiswa Gen Z, dari milih
               topik sampai kelar, semua dibantu AI.
-            </p>
+            </motion.p>
             <div className="mt-7 flex flex-col sm:flex-row gap-4">
-              <a
+              <motion.a
                 id="beli"
                 href="#"
-                className="btn-primary-hero rounded-xl px-5 py-3 text-base font-semibold text-center"
+                whileHover={{ y: -2, scale: 1.03 }}
+                whileTap={{ scale: 0.98 }}
+                className="btn-primary-hero rounded-xl px-5 py-3 text-base font-semibold text-center w-full sm:w-auto"
               >
                 🔥 Dapatkan Sekarang
-              </a>
-              <a
+              </motion.a>
+              <motion.a
                 href="#preview"
-                className="btn-secondary-hero rounded-xl px-5 py-3 text-base font-semibold text-center"
+                whileHover={{ y: -2, scale: 1.03 }}
+                whileTap={{ scale: 0.98 }}
+                className="btn-secondary-hero rounded-xl px-5 py-3 text-base font-semibold text-center w-full sm:w-auto"
               >
                 👀 Lihat Contoh Halaman
-              </a>
+              </motion.a>
             </div>
-            <div
-              id="bonus"
-              className="mt-6 inline-flex items-center gap-2 text-sm font-medium px-3 py-2 rounded-lg bg-white/70 border border-black/10"
+            <motion.div variants={fadeUp}
+              id="bonus-strip"
+              className="mt-6 w-full inline-flex flex-col sm:flex-row sm:w-auto rounded-xl bg-white/20 text-white border border-white/20 backdrop-blur px-4 py-3"
             >
               <span>🎁 BONUS:</span>
               <span>Template Skripsi + Prompt AI Rahasia</span>
-            </div>
-          </section>
+            </motion.div>
+          </motion.section>
 
-          <section className="relative">
+          <motion.section variants={fadeUp} initial="hidden" animate="visible" className="relative">
             <Image
               src="/images/section1.png"
               width={1000}
               height={1000}
               alt="AI Hologram"
-              className="mx-auto w-full  rounded-2xl"
+              className="mx-auto w-full rounded-2xl"
             />
             {/* <div className="relative w-full aspect-[4/3] rounded-2xl bg-white/70 border border-black/10 shadow-2xl overflow-hidden">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(0,255,179,0.25),transparent_40%),_radial-gradient(circle_at_70%_80%,rgba(124,58,237,0.22),transparent_45%)]"></div>
@@ -82,28 +189,28 @@ export default function Home() {
               </div>
             </div>
           </div> */}
-          </section>
+          </motion.section>
         </main>
       </div>
 
-      <section id="problem" className="w-full bg-[#e6eef4] py-16 md:py-24">
+      <motion.section id="problem" className="w-full bg-[#e6eef4] py-16 md:py-24" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={stagger}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto">
-            <h2 className="font-hero-heading font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight">
+            <motion.h2 variants={fadeUp} className="font-hero-heading font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight text-[#1B3C53]">
               Kenapa Skripsi Bikin Stress? 🤯
-            </h2>
-            <p className="mt-3 text-base sm:text-lg text-black/70 font-hero-sub">
+            </motion.h2>
+            <motion.p variants={fadeUp} className="mt-3 text-base sm:text-lg text-black/70 font-hero-sub">
               Ada tiga alasan utama yang bikin skripsi jadi drama panjang:
-            </p>
+            </motion.p>
           </div>
 
-          <div className="mt-8 md:mt-12">
+          <motion.div variants={fadeUp} className="mt-8 md:mt-12">
             <Image
               src="/images/stress.png"
               width={1000}
               height={1000}
               alt="AI Hologram"
-              className="mx-auto w-1/2 rounded-2xl"
+              className="mx-auto w-full sm:w-1/2 rounded-2xl"
             />
             {/* <div className="rounded-2xl bg-white/90 border border-black/10 p-6 md:p-8 shadow-xl">
               <div className="flex items-center gap-3 mb-4">
@@ -129,65 +236,67 @@ export default function Home() {
                 </div>
               </div>
             </div> */}
-          </div>
+          </motion.div>
 
           <div className="mt-8 md:mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-            <div className="rounded-xl p-5 bg-white border border-black/10">
+            <motion.div variants={fadeUp} whileHover={{ y: -4, scale: 1.01 }} className="rounded-xl p-5 bg-white border border-[#1B3C53]/10">
               <div className="text-3xl">🌀</div>
               <div className="mt-2 font-semibold">Bingung milih topik</div>
-              <div className="mt-1 text-sm text-black/70">
+              <div className="mt-1 text-sm text-[#1B3C53]/70">
                 Semua topik keliatan rumit, nggak ada yang cocok sama passion.
               </div>
-            </div>
-            <div className="rounded-xl p-5 bg-white border border-black/10">
+            </motion.div>
+            <motion.div variants={fadeUp} whileHover={{ y: -4, scale: 1.01 }} className="rounded-xl p-5 bg-white border border-[#1B3C53]/10">
               <div className="text-3xl">📚</div>
               <div className="mt-2 font-semibold">Ribet nyari jurnal</div>
-              <div className="mt-1 text-sm text-black/70">
+              <div className="mt-1 text-sm text-[#1B3C53]/70">
                 Waktu habis cuma buat cari referensi yang valid.
               </div>
-            </div>
-            <div className="rounded-xl p-5 bg-white border border-black/10">
+            </motion.div>
+            <motion.div variants={fadeUp} whileHover={{ y: -4, scale: 1.01 }} className="rounded-xl p-5 bg-white border border-[#1B3C53]/10">
               <div className="text-3xl">📝</div>
               <div className="mt-2 font-semibold">Revisi nggak kelar-kelar</div>
-              <div className="mt-1 text-sm text-black/70">
+              <div className="mt-1 text-sm text-[#1B3C53]/70">
                 Baru selesai revisi, eh revisi lagi.
               </div>
-            </div>
+            </motion.div>
           </div>
 
           <div className="mt-8 md:mt-12">
-            <div className="rounded-xl px-5 py-4 bg-white/90 border border-black/10 shadow">
+            <motion.div variants={fadeUp} className="rounded-2xl px-5 py-4 bg-white/90 border border-[#1B3C53]/10 shadow">
               <div className="text-center font-semibold">
                 &quot;Kami paham... makanya eBook ini hadir!&quot;
               </div>
-              <div className="text-center text-sm text-black/70 mt-1">
+              <div className="text-center text-sm text-[#1B3C53]/70 mt-1">
                 😌 Tenang… semua ini bisa di-handle sama AI kalau tau caranya.
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      <section id="solution" className="w-full bg-solution py-16 md:py-24">
+      <motion.section id="solution" className="w-full bg-solution py-16 md:py-24" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={stagger}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto">
-            <h2 className="font-hero-heading font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight text-[#1B3C53]">
+            <motion.h2 variants={fadeUp} className="font-hero-heading font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight text-[#1B3C53]">
               Kenalin, Partner Skripsi Baru Kamu: AI 🤖
-            </h2>
-            <p className="mt-3 text-base sm:text-lg text-black/70 font-hero-sub">
+            </motion.h2>
+            <motion.p variants={fadeUp} className="mt-3 text-base sm:text-lg text-black/70 font-hero-sub">
               7 Hari Step-by-Step skripsi kelar, full tutorial + prompt AI siap
               pakai.
-            </p>
+            </motion.p>
           </div>
 
           <div className="mt-8 md:mt-12 grid md:grid-cols-[1fr_1.2fr] gap-8 md:gap-10 items-stretch">
-            <Image
-              src="/images/teaching.png"
-              width={1000}
-              height={1000}
-              alt="AI Hologram"
-              className="mx-auto w-full  rounded-2xl"
-            />
+            <motion.div variants={fadeUp}>
+              <Image
+                src="/images/teaching.png"
+                width={1000}
+                height={1000}
+                alt="AI Hologram"
+                className="mx-auto w-full  rounded-2xl"
+              />
+            </motion.div>
             {/* <div className="rounded-2xl bg-white border border-black/10 p-6 md:p-8 shadow-xl relative overflow-hidden">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(124,58,237,0.18),transparent_50%),_radial-gradient(circle_at_20%_80%,rgba(0,255,179,0.2),transparent_45%)]"></div>
               <div className="relative z-[1] grid place-items-center text-center gap-3">
@@ -198,7 +307,7 @@ export default function Home() {
             </div> */}
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
-              <div className="rounded-xl p-5 bg-white/80 border border-black/10 hover:bg-[#a7f3d0]/40 transition-colors">
+              <motion.div variants={fadeUp} whileHover={{ y: -4, scale: 1.01 }} className="rounded-xl p-5 bg-white/80 border border-black/10 hover:bg-[#a7f3d0]/40 transition-colors">
                 <div className="text-lg">
                   🧠{" "}
                   <span className="font-semibold">
@@ -208,8 +317,8 @@ export default function Home() {
                 <div className="mt-1 text-sm text-black/70">
                   Setup mindset produktif & tools AI terbaik
                 </div>
-              </div>
-              <div className="rounded-xl p-5 bg-white/80 border border-black/10 hover:bg-[#a7f3d0]/40 transition-colors">
+              </motion.div>
+              <motion.div variants={fadeUp} whileHover={{ y: -4, scale: 1.01 }} className="rounded-xl p-5 bg-white/80 border border-black/10 hover:bg-[#a7f3d0]/40 transition-colors">
                 <div className="text-lg">
                   🎯{" "}
                   <span className="font-semibold">
@@ -219,8 +328,8 @@ export default function Home() {
                 <div className="mt-1 text-sm text-black/70">
                   Temukan topik yang relevan & unik
                 </div>
-              </div>
-              <div className="rounded-xl p-5 bg-white/80 border border-black/10 hover:bg-[#a7f3d0]/40 transition-colors">
+              </motion.div>
+              <motion.div variants={fadeUp} whileHover={{ y: -4, scale: 1.01 }} className="rounded-xl p-5 bg-white/80 border border-black/10 hover:bg-[#a7f3d0]/40 transition-colors">
                 <div className="text-lg">
                   📚{" "}
                   <span className="font-semibold">
@@ -230,16 +339,16 @@ export default function Home() {
                 <div className="mt-1 text-sm text-black/70">
                   Gunakan AI untuk filter jurnal
                 </div>
-              </div>
-              <div className="rounded-xl p-5 bg-white/80 border border-black/10 hover:bg-[#a7f3d0]/40 transition-colors">
+              </motion.div>
+              <motion.div variants={fadeUp} whileHover={{ y: -4, scale: 1.01 }} className="rounded-xl p-5 bg-white/80 border border-black/10 hover:bg-[#a7f3d0]/40 transition-colors">
                 <div className="text-lg">
                   ✍️ <span className="font-semibold">Hari 4: Susun BAB 1</span>
                 </div>
                 <div className="mt-1 text-sm text-black/70">
                   Struktur pendahuluan yang solid
                 </div>
-              </div>
-              <div className="rounded-xl p-5 bg-white/80 border border-black/10 hover:bg-[#a7f3d0]/40 transition-colors">
+              </motion.div>
+              <motion.div variants={fadeUp} whileHover={{ y: -4, scale: 1.01 }} className="rounded-xl p-5 bg-white/80 border border-black/10 hover:bg-[#a7f3d0]/40 transition-colors">
                 <div className="text-lg">
                   📊{" "}
                   <span className="font-semibold">
@@ -249,8 +358,8 @@ export default function Home() {
                 <div className="mt-1 text-sm text-black/70">
                   Panduan pengumpulan & analisis data
                 </div>
-              </div>
-              <div className="rounded-xl p-5 bg-white/80 border border-black/10 hover:bg-[#a7f3d0]/40 transition-colors">
+              </motion.div>
+              <motion.div variants={fadeUp} whileHover={{ y: -4, scale: 1.01 }} className="rounded-xl p-5 bg-white/80 border border-black/10 hover:bg-[#a7f3d0]/40 transition-colors">
                 <div className="text-lg">
                   🛠️{" "}
                   <span className="font-semibold">Hari 6: Susun BAB 3 & 4</span>
@@ -258,8 +367,8 @@ export default function Home() {
                 <div className="mt-1 text-sm text-black/70">
                   Metodologi & hasil riset dengan AI
                 </div>
-              </div>
-              <div className="rounded-xl p-5 bg-white/80 border border-black/10 hover:bg-[#a7f3d0]/40 transition-colors sm:col-span-2">
+              </motion.div>
+              <motion.div variants={fadeUp} whileHover={{ y: -4, scale: 1.01 }} className="rounded-xl p-5 bg-white/80 border border-black/10 hover:bg-[#a7f3d0]/40 transition-colors sm:col-span-2">
                 <div className="text-lg">
                   📝{" "}
                   <span className="font-semibold">
@@ -269,42 +378,44 @@ export default function Home() {
                 <div className="mt-1 text-sm text-black/70">
                   Grammar, plagiarisme, layout akhir
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
 
           <div className="mt-10 flex justify-center">
-            <a
+            <motion.a
               href="#beli"
+              whileHover={{ y: -2, scale: 1.03 }}
+              whileTap={{ scale: 0.98 }}
               className="btn-primary-hero rounded-xl px-6 py-3 text-base font-semibold text-center"
             >
               🚀 Mulai Skripsi dengan AI
-            </a>
+            </motion.a>
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      <section id="preview" className="w-full bg-white py-16 md:py-24">
+      <motion.section id="preview" className="w-full bg-white py-16 md:py-24" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={stagger}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto">
-            <h2 className="font-hero-heading font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight text-[#1B3C53]">
+            <motion.h2 variants={fadeUp} className="font-hero-heading font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight text-[#1B3C53]">
               Intip Isi eBook-nya 📖
-            </h2>
-            <p className="mt-3 text-base sm:text-lg text-black/70 font-hero-sub">
+            </motion.h2>
+            <motion.p variants={fadeUp} className="mt-3 text-base sm:text-lg text-black/70 font-hero-sub">
               Lihat cuplikan halaman, template, dan prompt AI yang bakal kamu
               dapatkan.
-            </p>
+            </motion.p>
           </div>
 
           <div className="mt-8 md:mt-12">
-            <div className="flex items-center justify-center gap-3 text-sm text-black/60">
+            <motion.div variants={fadeUp} className="flex items-center justify-center gap-3 text-sm text-[#1B3C53]/60">
               <span>⬅️</span>
               <span>Geser untuk melihat lainnya</span>
               <span>➡️</span>
-            </div>
+            </motion.div>
             <div className="mt-5 overflow-x-auto">
               <div className="flex gap-4 md:gap-6 snap-x snap-mandatory">
-                <div className="relative rounded-2xl bg-white border border-black/10 shadow-lg overflow-hidden min-w-[280px] sm:min-w-[360px] md:min-w-[420px] snap-start">
+                <motion.div variants={fadeUp} whileHover={{ y: -4, scale: 1.01 }} className="relative rounded-2xl bg-white border border-black/10 shadow-lg overflow-hidden min-w-[280px] sm:min-w-[360px] md:min-w-[420px] snap-start">
                   <div className="h-[220px] sm:h-[260px] md:h-[320px] bg-[linear-gradient(120deg,_#dbeafe_0%,_#ede9fe_50%,_#d1fae5_100%)] grid place-items-center">
                     <Image
                       src="/file.svg"
@@ -317,9 +428,9 @@ export default function Home() {
                   <div className="absolute bottom-3 left-3 px-3 py-1 rounded-full text-xs font-medium bg-black/70 text-white">
                     Halaman tutorial AI
                   </div>
-                </div>
+                </motion.div>
 
-                <div className="relative rounded-2xl bg-white border border-black/10 shadow-lg overflow-hidden min-w-[280px] sm:min-w-[360px] md:min-w-[420px] snap-start">
+                <motion.div variants={fadeUp} whileHover={{ y: -4, scale: 1.01 }} className="relative rounded-2xl bg-white border border-black/10 shadow-lg overflow-hidden min-w-[280px] sm:min-w-[360px] md:min-w-[420px] snap-start">
                   <div className="h-[220px] sm:h-[260px] md:h-[320px] bg-[linear-gradient(120deg,_#fef3c7_0%,_#ede9fe_50%,_#cffafe_100%)] grid place-items-center">
                     <Image
                       src="/file.svg"
@@ -332,9 +443,9 @@ export default function Home() {
                   <div className="absolute bottom-3 left-3 px-3 py-1 rounded-full text-xs font-medium bg-black/70 text-white">
                     Template Skripsi Siap Pakai
                   </div>
-                </div>
+                </motion.div>
 
-                <div className="relative rounded-2xl bg-white border border-black/10 shadow-lg overflow-hidden min-w-[280px] sm:min-w-[360px] md:min-w-[420px] snap-start">
+                <motion.div variants={fadeUp} whileHover={{ y: -4, scale: 1.01 }} className="relative rounded-2xl bg-white border border-black/10 shadow-lg overflow-hidden min-w-[280px] sm:min-w-[360px] md:min-w-[420px] snap-start">
                   <div className="h-[220px] sm:h-[260px] md:h-[320px] bg-[linear-gradient(120deg,_#ede9fe_0%,_#d1fae5_50%,_#fee2e2_100%)] grid place-items-center">
                     <Image
                       src="/file.svg"
@@ -347,9 +458,9 @@ export default function Home() {
                   <div className="absolute bottom-3 left-3 px-3 py-1 rounded-full text-xs font-medium bg-black/70 text-white">
                     Prompt AI untuk BAB 1
                   </div>
-                </div>
+                </motion.div>
 
-                <div className="relative rounded-2xl bg-white border border-black/10 shadow-lg overflow-hidden min-w-[280px] sm:min-w-[360px] md:min-w-[420px] snap-start">
+                <motion.div variants={fadeUp} whileHover={{ y: -4, scale: 1.01 }} className="relative rounded-2xl bg-white border border-black/10 shadow-lg overflow-hidden min-w-[280px] sm:min-w-[360px] md:min-w-[420px] snap-start">
                   <div className="h-[220px] sm:h-[260px] md:h-[320px] bg-[linear-gradient(120deg,_#bae6fd_0%,_#ede9fe_50%,_#d1fae5_100%)] grid place-items-center">
                     <Image
                       src="/file.svg"
@@ -362,9 +473,9 @@ export default function Home() {
                   <div className="absolute bottom-3 left-3 px-3 py-1 rounded-full text-xs font-medium bg-black/70 text-white">
                     Panduan Cari Jurnal Otomatis
                   </div>
-                </div>
+                </motion.div>
 
-                <div className="relative rounded-2xl bg-white border border-black/10 shadow-lg overflow-hidden min-w-[280px] sm:min-w-[360px] md:min-w-[420px] snap-start">
+                <motion.div variants={fadeUp} whileHover={{ y: -4, scale: 1.01 }} className="relative rounded-2xl bg-white border border-black/10 shadow-lg overflow-hidden min-w-[280px] sm:min-w-[360px] md:min-w-[420px] snap-start">
                   <div className="h-[220px] sm:h-[260px] md:h-[320px] bg-[linear-gradient(120deg,_#fde68a_0%,_#ede9fe_50%,_#d1fae5_100%)] grid place-items-center">
                     <Image
                       src="/file.svg"
@@ -377,39 +488,42 @@ export default function Home() {
                   <div className="absolute bottom-3 left-3 px-3 py-1 rounded-full text-xs font-medium bg-black/70 text-white">
                     Tips Bebas Plagiarisme
                   </div>
-                </div>
+                </motion.div>
               </div>
             </div>
           </div>
 
           <div className="mt-10 flex justify-center">
-            <a
+            <motion.a
               href="#beli"
+              whileHover={{ y: -2, scale: 1.03 }}
+              whileTap={{ scale: 0.98 }}
               className="btn-primary-hero rounded-xl px-6 py-3 text-base font-semibold text-center"
             >
               📥 Download Sekarang
-            </a>
+            </motion.a>
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      <section
+      <motion.section
         id="testimonial"
         className="w-full bg-testimonial py-16 md:py-24"
+        initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={stagger}
       >
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto">
-            <h2 className="font-hero-heading font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight text-[#1B3C53]">
+            <motion.h2 variants={fadeUp} className="font-hero-heading font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight text-[#1B3C53]">
               Kata Mereka yang Udah Coba… 💬
-            </h2>
-            <p className="mt-3 text-base sm:text-lg text-black/70 font-hero-sub">
+            </motion.h2>
+            <motion.p variants={fadeUp} className="mt-3 text-base sm:text-lg text-black/70 font-hero-sub">
               Cerita nyata dari mahasiswa yang skripsinya kelar lebih cepat
               dengan bantuan AI.
-            </p>
+            </motion.p>
           </div>
 
           <div className="mt-8 md:mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-            <div className="rounded-2xl bg-white border border-black/10 p-6 shadow-lg">
+            <motion.div variants={fadeUp} whileHover={{ y: -4, scale: 1.01 }} className="rounded-2xl bg-white border border-black/10 p-6 shadow-lg">
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-full overflow-hidden border border-black/10 bg-[#f1f5f9] grid place-items-center">
                   <span className="text-xl">🧑‍🎓</span>
@@ -424,9 +538,9 @@ export default function Home() {
                 hari!&quot;
               </blockquote>
               <div className="mt-3 text-amber-400">⭐⭐⭐⭐⭐</div>
-            </div>
+            </motion.div>
 
-            <div className="rounded-2xl bg-white border border-black/10 p-6 shadow-lg">
+            <motion.div variants={fadeUp} whileHover={{ y: -4, scale: 1.01 }} className="rounded-2xl bg-white border border-black/10 p-6 shadow-lg">
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-full overflow-hidden border border-black/10 bg-[#f1f5f9] grid place-items-center">
                   <span className="text-xl">🧑‍🎓</span>
@@ -440,9 +554,9 @@ export default function Home() {
                 &quot;AI-nya beneran bantu, bukan cuma teori.&quot;
               </blockquote>
               <div className="mt-3 text-amber-400">⭐⭐⭐⭐⭐</div>
-            </div>
+            </motion.div>
 
-            <div className="rounded-2xl bg-white border border-black/10 p-6 shadow-lg">
+            <motion.div variants={fadeUp} whileHover={{ y: -4, scale: 1.01 }} className="rounded-2xl bg-white border border-black/10 p-6 shadow-lg">
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-full overflow-hidden border border-black/10 bg-[#f1f5f9] grid place-items-center">
                   <span className="text-xl">🧑‍🎓</span>
@@ -457,48 +571,50 @@ export default function Home() {
                 banget.&quot;
               </blockquote>
               <div className="mt-3 text-amber-400">⭐⭐⭐⭐⭐</div>
-            </div>
+            </motion.div>
           </div>
 
           <div className="mt-10">
-            <div className="rounded-2xl bg-white/90 border border-black/10 p-6 md:p-8 shadow-xl">
+            <motion.div variants={fadeUp} className="rounded-2xl bg-white/90 border border-[#1B3C53]/10 p-6 md:p-8 shadow-xl">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                 <div>
                   <div className="font-semibold text-lg">
                     Tersisa hanya 99K untuk akses semua materi + bonusnya!
                   </div>
-                  <div className="text-sm text-black/70">
+                  <div className="text-sm text-[#1B3C53]/70">
                     Harga bisa naik kapan saja.
                   </div>
                 </div>
                 <div>
-                  <a
+                  <motion.a
                     href="#beli"
-                    className="btn-primary-hero rounded-xl px-6 py-3 text-base font-semibold text-center"
+                    whileHover={{ y: -2, scale: 1.03 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="btn-primary-hero rounded-xl px-6 py-3 text-base font-semibold text-center w-full sm:w-auto"
                   >
                     🚀 Mulai Skripsi Sekarang
-                  </a>
+                  </motion.a>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      <section id="bonus" className="w-full bg-bonus py-16 md:py-24">
+      <motion.section id="bonus" className="w-full bg-bonus py-16 md:py-24" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={stagger}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto">
-            <h2 className="font-hero-heading font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight text-[#1B3C53]">
+            <motion.h2 variants={fadeUp} className="font-hero-heading font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight text-[#1B3C53]">
               Bonus Spesial Buat Kamu 🎁
-            </h2>
-            <p className="mt-3 text-base sm:text-lg text-black/70 font-hero-sub">
+            </motion.h2>
+            <motion.p variants={fadeUp} className="mt-3 text-base sm:text-lg text-black/70 font-hero-sub">
               Semua pembelian eBook ini akan mendapatkan bonus eksklusif yang
               bikin proses skripsi kamu makin gampang.
-            </p>
+            </motion.p>
           </div>
 
           <div className="mt-8 md:mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6">
-            <div className="rounded-2xl bg-white border border-black/10 p-6 shadow-lg text-center">
+            <motion.div variants={fadeUp} whileHover={{ y: -4, scale: 1.01 }} className="rounded-2xl bg-white border border-black/10 p-6 shadow-lg text-center">
               <div className="text-4xl">🎯</div>
               <div className="mt-3 font-semibold text-lg">
                 Template Skripsi Siap Pakai
@@ -506,8 +622,8 @@ export default function Home() {
               <div className="mt-1 text-sm text-black/70">
                 Tinggal edit, sesuaiin sama topik skripsi kamu.
               </div>
-            </div>
-            <div className="rounded-2xl bg-white border border-black/10 p-6 shadow-lg text-center">
+            </motion.div>
+            <motion.div variants={fadeUp} whileHover={{ y: -4, scale: 1.01 }} className="rounded-2xl bg-white border border-black/10 p-6 shadow-lg text-center">
               <div className="text-4xl">💬</div>
               <div className="mt-3 font-semibold text-lg">
                 Daftar Prompt AI Skripsi
@@ -515,8 +631,8 @@ export default function Home() {
               <div className="mt-1 text-sm text-black/70">
                 Prompt siap pakai untuk milih topik, cari jurnal, dan nulis Bab.
               </div>
-            </div>
-            <div className="rounded-2xl bg-white border border-black/10 p-6 shadow-lg text-center">
+            </motion.div>
+            <motion.div variants={fadeUp} whileHover={{ y: -4, scale: 1.01 }} className="rounded-2xl bg-white border border-black/10 p-6 shadow-lg text-center">
               <div className="text-4xl">🛡️</div>
               <div className="mt-3 font-semibold text-lg">
                 Panduan Bebas Plagiarisme
@@ -524,48 +640,51 @@ export default function Home() {
               <div className="mt-1 text-sm text-black/70">
                 Tips & trik lolos uji Turnitin tanpa drama.
               </div>
-            </div>
+            </motion.div>
           </div>
 
           <div className="mt-10">
-            <div className="rounded-2xl bg-[#fef08a] border border-black/10 p-6 md:p-8 shadow-xl">
+            <motion.div variants={fadeUp} className="rounded-2xl bg-[#fff6b3] border border-[#1B3C53]/10 p-6 md:p-8 shadow-xl">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                 <div>
                   <div className="font-semibold text-lg">
                     💎 Total value Rp 500.000, sekarang cuma 99K!
                   </div>
-                  <div className="text-sm text-black/70">
+                  <div className="text-sm text-[#1B3C53]/70">
                     Dapatkan semua bonus + eBook dalam sekali beli.
                   </div>
                 </div>
                 <div>
-                  <a
+                  <motion.a
                     href="#beli"
-                    className="btn-primary-hero rounded-xl px-6 py-3 text-base font-semibold text-center"
+                    whileHover={{ y: -2, scale: 1.03 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="btn-primary-hero inline-flex rounded-xl px-6 py-3 text-base font-semibold text-center w-full sm:w-auto"
                   >
                     🔥 Ambil Semua Bonus & eBook Sekarang
-                  </a>
+                  </motion.a>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      <section
+      <motion.section
         id="cta"
         className="w-full relative overflow-hidden bg-cta py-16 md:py-24"
+        initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={stagger}
       >
         <div className="absolute inset-0 cta-overlay pointer-events-none"></div>
         <div className="relative max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
           <div>
-            <h2 className="font-hero-heading font-extrabold text-white text-3xl sm:text-4xl md:text-5xl leading-tight">
+            <motion.h2 variants={fadeUp} className="font-hero-heading font-extrabold text-white text-3xl sm:text-4xl md:text-5xl leading-tight">
               Jangan Tunggu Sampai Deadline Mepet! 🚀
-            </h2>
-            <p className="mt-3 text-base sm:text-lg text-white/90 font-hero-sub">
+            </motion.h2>
+            <motion.p variants={fadeUp} className="mt-3 text-base sm:text-lg text-white/90 font-hero-sub">
               Skripsimu bisa kelar minggu ini juga kalau mulai sekarang.
-            </p>
-            <ul className="mt-6 space-y-3 text-white/90">
+            </motion.p>
+            <motion.ul variants={fadeUp} className="mt-6 space-y-3 text-white/90">
               <li>
                 ✅ <span className="font-semibold">eBook Lengkap</span> 7 Hari
                 Kelar Skripsi
@@ -577,20 +696,22 @@ export default function Home() {
               <li>
                 ✅ <span className="font-semibold">Akses Instan</span>
               </li>
-            </ul>
+            </motion.ul>
             <div className="mt-7">
-              <a
+              <motion.a
                 href="#beli"
-                className="btn-primary-hero rounded-2xl px-7 py-4 text-lg font-bold inline-block"
+                whileHover={{ y: -2, scale: 1.03 }}
+                whileTap={{ scale: 0.98 }}
+                className="btn-primary-hero rounded-2xl px-7 py-4 text-lg font-bold inline-block w-full sm:w-auto"
               >
                 🔥 Mulai Skripsi Sekarang
-              </a>
+              </motion.a>
               <div className="text-xs text-white/80 mt-2">
                 *Harga promo cuma berlaku hari ini
               </div>
             </div>
           </div>
-          <div className="relative">
+          <motion.div variants={fadeUp} className="relative">
             <Image
               src="/images/trophy.png"
               width={1000}
@@ -608,9 +729,9 @@ export default function Home() {
                 </div>
               </div>
             </div> */}
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
     </>
   );
 }
