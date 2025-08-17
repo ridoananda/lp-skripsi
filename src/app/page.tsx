@@ -176,7 +176,7 @@ export default function Home() {
 
           <motion.section variants={fadeUp} initial="hidden" animate="visible" className="relative">
             <Image
-              src="/images/section1.png"
+              src="/images/skripsi-mahasiswa.png"
               width={1000}
               height={1000}
               alt="AI Hologram"
@@ -206,7 +206,7 @@ export default function Home() {
 
           <motion.div variants={fadeUp} className="mt-8 md:mt-12">
             <Image
-              src="/images/stress.png"
+              src="/images/mahasiswa-stress.png"
               width={1000}
               height={1000}
               alt="AI Hologram"
@@ -240,21 +240,27 @@ export default function Home() {
 
           <div className="mt-8 md:mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
             <motion.div variants={fadeUp} whileHover={{ y: -4, scale: 1.01 }} className="rounded-xl p-5 bg-white border border-[#1B3C53]/10">
-              <div className="text-3xl">🌀</div>
+              <div className="w-20 h-20">
+                <Image src="/images/why-section/3.png" width={500} height={500} alt="Ikon bingung memilih topik" className="w-20 h-20 object-contain" />
+              </div>
               <div className="mt-2 font-semibold">Bingung milih topik</div>
               <div className="mt-1 text-sm text-[#1B3C53]/70">
                 Semua topik keliatan rumit, nggak ada yang cocok sama passion.
               </div>
             </motion.div>
             <motion.div variants={fadeUp} whileHover={{ y: -4, scale: 1.01 }} className="rounded-xl p-5 bg-white border border-[#1B3C53]/10">
-              <div className="text-3xl">📚</div>
+              <div className="w-20 h-20">
+                <Image src="/images/why-section/2.png" width={500} height={500} alt="Ikon ribet mencari jurnal" className="w-20 h-20 object-contain" />
+              </div>
               <div className="mt-2 font-semibold">Ribet nyari jurnal</div>
               <div className="mt-1 text-sm text-[#1B3C53]/70">
                 Waktu habis cuma buat cari referensi yang valid.
               </div>
             </motion.div>
             <motion.div variants={fadeUp} whileHover={{ y: -4, scale: 1.01 }} className="rounded-xl p-5 bg-white border border-[#1B3C53]/10">
-              <div className="text-3xl">📝</div>
+              <div className="w-20 h-20">
+                <Image src="/images/why-section/1.png" width={500} height={500} alt="Ikon revisi yang tidak kelar" className="w-20 h-20 object-contain" />
+              </div>
               <div className="mt-2 font-semibold">Revisi nggak kelar-kelar</div>
               <div className="mt-1 text-sm text-[#1B3C53]/70">
                 Baru selesai revisi, eh revisi lagi.
@@ -308,8 +314,10 @@ export default function Home() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
               <motion.div variants={fadeUp} whileHover={{ y: -4, scale: 1.01 }} className="rounded-xl p-5 bg-white/80 border border-black/10 hover:bg-[#a7f3d0]/40 transition-colors">
-                <div className="text-lg">
-                  🧠{" "}
+                <div className="w-20 h-20">
+                  <Image src="/images/step-section/1.png" width={500} height={500} alt="Ikon Hari 1: Mindset & Tools AI" className="w-20 h-20 object-contain" />
+                </div>
+                <div className="mt-2 text-lg">
                   <span className="font-semibold">
                     Hari 1: Mindset & Tools AI
                   </span>
@@ -319,8 +327,10 @@ export default function Home() {
                 </div>
               </motion.div>
               <motion.div variants={fadeUp} whileHover={{ y: -4, scale: 1.01 }} className="rounded-xl p-5 bg-white/80 border border-black/10 hover:bg-[#a7f3d0]/40 transition-colors">
-                <div className="text-lg">
-                  🎯{" "}
+                <div className="w-20 h-20">
+                  <Image src="/images/step-section/2.png" width={500} height={500} alt="Ikon Hari 2: Milih Topik Riset" className="w-20 h-20 object-contain" />
+                </div>
+                <div className="mt-2 text-lg">
                   <span className="font-semibold">
                     Hari 2: Milih Topik Riset
                   </span>
@@ -330,8 +340,10 @@ export default function Home() {
                 </div>
               </motion.div>
               <motion.div variants={fadeUp} whileHover={{ y: -4, scale: 1.01 }} className="rounded-xl p-5 bg-white/80 border border-black/10 hover:bg-[#a7f3d0]/40 transition-colors">
-                <div className="text-lg">
-                  📚{" "}
+                <div className="w-20 h-20">
+                  <Image src="/images/step-section/3.png" width={500} height={500} alt="Ikon Hari 3: Cari Literatur Otomatis" className="w-20 h-20 object-contain" />
+                </div>
+                <div className="mt-2 text-lg">
                   <span className="font-semibold">
                     Hari 3: Cari Literatur Otomatis
                   </span>
@@ -341,16 +353,21 @@ export default function Home() {
                 </div>
               </motion.div>
               <motion.div variants={fadeUp} whileHover={{ y: -4, scale: 1.01 }} className="rounded-xl p-5 bg-white/80 border border-black/10 hover:bg-[#a7f3d0]/40 transition-colors">
-                <div className="text-lg">
-                  ✍️ <span className="font-semibold">Hari 4: Susun BAB 1</span>
+                <div className="w-20 h-20">
+                  <Image src="/images/step-section/4.png" width={500} height={500} alt="Ikon Hari 4: Susun BAB 1" className="w-20 h-20 object-contain" />
+                </div>
+                <div className="mt-2 text-lg">
+                  <span className="font-semibold">Hari 4: Susun BAB 1</span>
                 </div>
                 <div className="mt-1 text-sm text-black/70">
                   Struktur pendahuluan yang solid
                 </div>
               </motion.div>
               <motion.div variants={fadeUp} whileHover={{ y: -4, scale: 1.01 }} className="rounded-xl p-5 bg-white/80 border border-black/10 hover:bg-[#a7f3d0]/40 transition-colors">
-                <div className="text-lg">
-                  📊{" "}
+                <div className="w-20 h-20">
+                  <Image src="/images/step-section/5.png" width={500} height={500} alt="Ikon Hari 5: Data & Olah Data" className="w-20 h-20 object-contain" />
+                </div>
+                <div className="mt-2 text-lg">
                   <span className="font-semibold">
                     Hari 5: Data & Olah Data
                   </span>
@@ -360,8 +377,10 @@ export default function Home() {
                 </div>
               </motion.div>
               <motion.div variants={fadeUp} whileHover={{ y: -4, scale: 1.01 }} className="rounded-xl p-5 bg-white/80 border border-black/10 hover:bg-[#a7f3d0]/40 transition-colors">
-                <div className="text-lg">
-                  🛠️{" "}
+                <div className="w-20 h-20">
+                  <Image src="/images/step-section/6.png" width={500} height={500} alt="Ikon Hari 6: Susun BAB 3 & 4" className="w-20 h-20 object-contain" />
+                </div>
+                <div className="mt-2 text-lg">
                   <span className="font-semibold">Hari 6: Susun BAB 3 & 4</span>
                 </div>
                 <div className="mt-1 text-sm text-black/70">
@@ -369,8 +388,10 @@ export default function Home() {
                 </div>
               </motion.div>
               <motion.div variants={fadeUp} whileHover={{ y: -4, scale: 1.01 }} className="rounded-xl p-5 bg-white/80 border border-black/10 hover:bg-[#a7f3d0]/40 transition-colors sm:col-span-2">
-                <div className="text-lg">
-                  📝{" "}
+                <div className="w-20 h-20">
+                  <Image src="/images/step-section/7.png" width={500} height={500} alt="Ikon Hari 7: Editing & Finalisasi" className="w-20 h-20 object-contain" />
+                </div>
+                <div className="mt-2 text-lg">
                   <span className="font-semibold">
                     Hari 7: Editing & Finalisasi
                   </span>
@@ -615,7 +636,9 @@ export default function Home() {
 
           <div className="mt-8 md:mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6">
             <motion.div variants={fadeUp} whileHover={{ y: -4, scale: 1.01 }} className="rounded-2xl bg-white border border-black/10 p-6 shadow-lg text-center">
-              <div className="text-4xl">🎯</div>
+              <div className="w-20 h-20 mx-auto">
+                <Image src="/images/why-section/1.png" width={64} height={64} alt="Ikon Template Skripsi Siap Pakai" className="w-20 h-20 object-contain" />
+              </div>
               <div className="mt-3 font-semibold text-lg">
                 Template Skripsi Siap Pakai
               </div>
@@ -624,7 +647,9 @@ export default function Home() {
               </div>
             </motion.div>
             <motion.div variants={fadeUp} whileHover={{ y: -4, scale: 1.01 }} className="rounded-2xl bg-white border border-black/10 p-6 shadow-lg text-center">
-              <div className="text-4xl">💬</div>
+              <div className="w-20 h-20 mx-auto">
+                <Image src="/images/why-section/2.png" width={64} height={64} alt="Ikon Daftar Prompt AI Skripsi" className="w-20 h-20 object-contain" />
+              </div>
               <div className="mt-3 font-semibold text-lg">
                 Daftar Prompt AI Skripsi
               </div>
@@ -633,7 +658,9 @@ export default function Home() {
               </div>
             </motion.div>
             <motion.div variants={fadeUp} whileHover={{ y: -4, scale: 1.01 }} className="rounded-2xl bg-white border border-black/10 p-6 shadow-lg text-center">
-              <div className="text-4xl">🛡️</div>
+              <div className="w-20 h-20 mx-auto">
+                <Image src="/images/why-section/3.png" width={64} height={64} alt="Ikon Panduan Bebas Plagiarisme" className="w-20 h-20 object-contain" />
+              </div>
               <div className="mt-3 font-semibold text-lg">
                 Panduan Bebas Plagiarisme
               </div>
@@ -702,7 +729,7 @@ export default function Home() {
                 href="#beli"
                 whileHover={{ y: -2, scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
-                className="btn-primary-hero rounded-2xl px-7 py-4 text-lg font-bold inline-block w-full sm:w-auto"
+                className="btn-primary-hero text-center rounded-2xl px-7 py-4 text-lg font-bold inline-block w-full sm:w-auto"
               >
                 🔥 Mulai Skripsi Sekarang
               </motion.a>
