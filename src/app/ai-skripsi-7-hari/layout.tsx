@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     siteName: "eBook Skripsi",
     images: [
       {
-        url: "/images/skripsi-mahasiswa.png",
+        url: "/images/skripsi-mahasiswa.webp",
         alt: "Pratinjau eBook Skripsi Berbasis AI",
       },
     ],
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     title: "AI Skripsi 7 Hari – Selesaikan Skripsi Lebih Cepat dengan AI",
     description:
       "Panduan langkah demi langkah untuk menyelesaikan skripsi dalam 7 hari dengan bantuan AI. Termasuk template siap pakai, kumpulan prompt, dan tips anti plagiarisme.",
-    images: ["/images/skripsi-mahasiswa.png"],
+    images: ["/images/skripsi-mahasiswa.webp"],
   },
 };
 

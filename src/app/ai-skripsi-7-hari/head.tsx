@@ -1,8 +1,8 @@
 export default function Head() {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || (typeof window !== 'undefined' ? `${window.location.protocol}//${window.location.host}` : "https://bantuanaiq.id");
   const pagePath = "/ai-skripsi-7-hari";
   const url = baseUrl ? `${baseUrl}${pagePath}` : undefined;
-  const imagePath = "/images/section1.png";
+  const imagePath = "/images/skripsi-mahasiswa.webp";
   const imageUrl = baseUrl ? `${baseUrl}${imagePath}` : imagePath;
 
   const title = "AI Skripsi 7 Hari – Selesaikan Skripsi Lebih Cepat dengan AI";
