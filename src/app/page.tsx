@@ -181,6 +181,9 @@ export default function Home() {
               height={720}
               alt="AI Hologram"
               className="mx-auto w-full rounded-2xl"
+              priority
+              loading="eager"
+              fetchPriority="high"
             />
             {/* <div className="relative w-full aspect-[4/3] rounded-2xl bg-white/70 border border-black/10 shadow-2xl overflow-hidden">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(0,255,179,0.25),transparent_40%),_radial-gradient(circle_at_70%_80%,rgba(124,58,237,0.22),transparent_45%)]"></div>

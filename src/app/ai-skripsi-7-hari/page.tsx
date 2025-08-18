@@ -253,14 +253,10 @@ export default function Home() {
               height={720}
               alt="AI Hologram"
               className="mx-auto w-full rounded-2xl"
+              priority
+              loading="eager"
+              fetchPriority="high"
             />
-            {/* <div className="relative w-full aspect-[4/3] rounded-2xl bg-white/70 border border-black/10 shadow-2xl overflow-hidden">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(0,255,179,0.25),transparent_40%),_radial-gradient(circle_at_70%_80%,rgba(124,58,237,0.22),transparent_45%)]"></div>
-            <div className="absolute inset-0 grid place-items-center p-6">
-              <div className="w-full max-w-xs mx-auto text-center">
-              </div>
-            </div>
-          </div> */}
           </motion.section>
         </main>
       </div>
@@ -297,30 +293,6 @@ export default function Home() {
               alt="AI Hologram"
               className="mx-auto w-full sm:w-1/2 rounded-2xl"
             />
-            {/* <div className="rounded-2xl bg-white/90 border border-black/10 p-6 md:p-8 shadow-xl">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="text-2xl">😮‍💨</div>
-                <div className="text-sm text-black/60">
-                  Mahasiswa lelah + tumpukan buku
-                </div>
-              </div>
-              <div className="h-40 rounded-xl bg-[linear-gradient(120deg,_#fef3c7_0%,_#ede9fe_50%,_#d1fae5_100%)] border border-black/10 grid place-items-center">
-                <div className="w-3/4">
-                  <div className="text-center text-sm mb-1 text-black/70">
-                    Progress Skripsi
-                  </div>
-                  <div className="w-full h-3 rounded-full bg-black/10">
-                    <div
-                      className="h-3 rounded-full bg-[#22d3ee]"
-                      style={{ width: "5%" }}
-                    ></div>
-                  </div>
-                  <div className="text-center text-xs mt-1 text-black/50">
-                    stuck di 5%
-                  </div>
-                </div>
-              </div>
-            </div> */}
           </motion.div>
 
           <div className="mt-8 md:mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 text-center">
@@ -434,14 +406,6 @@ export default function Home() {
                 className="mx-auto w-full  rounded-2xl"
               />
             </motion.div>
-            {/* <div className="rounded-2xl bg-white border border-black/10 p-6 md:p-8 shadow-xl relative overflow-hidden">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(124,58,237,0.18),transparent_50%),_radial-gradient(circle_at_20%_80%,rgba(0,255,179,0.2),transparent_45%)]"></div>
-              <div className="relative z-[1] grid place-items-center text-center gap-3">
-                <Image src="/globe.svg" alt="AI Assistant" width={110} height={110} className="mx-auto opacity-85" />
-                <div className="text-sm text-black/60">AI hologram memandu mahasiswa 📚🤖</div>
-                <div className="text-xs text-black/50">Ikuti timeline 7 hari sampai beres</div>
-              </div>
-            </div> */}
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
               <motion.div
@@ -1051,16 +1015,6 @@ export default function Home() {
               alt="AI Hologram"
               className="mx-auto w-full  rounded-2xl"
             />
-            {/* <div className="relative w-full aspect-[4/3] rounded-2xl bg-white/70 border border-black/10 shadow-2xl overflow-hidden">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(255,255,255,0.45),transparent_40%),_radial-gradient(circle_at_80%_70%,rgba(124,58,237,0.25),transparent_45%),_radial-gradient(circle_at_60%_20%,rgba(16,185,129,0.22),transparent_45%)]"></div>
-              <div className="absolute inset-0 grid place-items-center p-6">
-                <div className="w-full max-w-xs mx-auto text-center">
-                  <div className="text-6xl">🤖🏆</div>
-                  <div className="mt-3 text-sm text-black/60">AI kasih trofi ke mahasiswa yang kelar skripsi 🎉</div>
-                  <div className="mt-1 text-xs text-black/50">Aksen confetti lembut di latar</div>
-                </div>
-              </div>
-            </div> */}
           </motion.div>
         </div>
       </motion.section>
