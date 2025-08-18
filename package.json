@@ -4,11 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "NODE_ENV=production next build",
-    "build:analyze": "ANALYZE=true npm run build",
+    "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "optimize": "npm run build && npm run start"
+    "lint": "next lint"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
