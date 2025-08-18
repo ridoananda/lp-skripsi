@@ -264,6 +264,7 @@ export default function Home() {
               priority
               loading="eager"
               fetchPriority="high"
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
           </motion.section>
         </main>
@@ -300,6 +301,7 @@ export default function Home() {
               height={720}
               alt="AI Hologram"
               className="mx-auto w-full sm:w-1/2 rounded-2xl"
+              sizes="(max-width: 640px) 100vw, 50vw"
             />
           </motion.div>
 
@@ -312,10 +314,11 @@ export default function Home() {
               <div className="w-20 h-20 mx-auto">
                 <Image
                   src="/images/why-section/3.webp"
-                  width={500}
-                  height={500}
+                  width={80}
+                  height={80}
                   alt="Ikon bingung memilih topik"
                   className="w-20 h-20 object-contain"
+                  sizes="80px"
                 />
               </div>
               <div className="mt-2 font-semibold">Bingung milih topik</div>
@@ -331,10 +334,11 @@ export default function Home() {
               <div className="w-20 h-20 mx-auto">
                 <Image
                   src="/images/why-section/2.webp"
-                  width={500}
-                  height={500}
+                  width={80}
+                  height={80}
                   alt="Ikon ribet mencari jurnal"
                   className="w-20 h-20 object-contain"
+                  sizes="80px"
                 />
               </div>
               <div className="mt-2 font-semibold">Ribet nyari jurnal</div>
@@ -350,10 +354,11 @@ export default function Home() {
               <div className="w-20 h-20 mx-auto">
                 <Image
                   src="/images/why-section/1.webp"
-                  width={500}
-                  height={500}
+                  width={80}
+                  height={80}
                   alt="Ikon revisi yang tidak kelar"
                   className="w-20 h-20 object-contain"
+                  sizes="80px"
                 />
               </div>
               <div className="mt-2 font-semibold">Revisi nggak kelar-kelar</div>
@@ -412,6 +417,7 @@ export default function Home() {
                 height={720}
                 alt="AI Hologram"
                 className="mx-auto w-full  rounded-2xl"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </motion.div>
 
@@ -424,10 +430,11 @@ export default function Home() {
                 <div className="w-20 h-20">
                   <Image
                     src="/images/step-section/1.webp"
-                    width={500}
-                    height={500}
+                    width={80}
+                    height={80}
                     alt="Ikon Hari 1: Mindset & Tools AI"
                     className="w-20 h-20 object-contain"
+                    sizes="80px"
                   />
                 </div>
                 <div className="mt-2 text-lg">
@@ -447,10 +454,11 @@ export default function Home() {
                 <div className="w-20 h-20">
                   <Image
                     src="/images/step-section/2.webp"
-                    width={500}
-                    height={500}
+                    width={80}
+                    height={80}
                     alt="Ikon Hari 2: Milih Topik Riset"
                     className="w-20 h-20 object-contain"
+                    sizes="80px"
                   />
                 </div>
                 <div className="mt-2 text-lg">
@@ -470,10 +478,11 @@ export default function Home() {
                 <div className="w-20 h-20">
                   <Image
                     src="/images/step-section/3.webp"
-                    width={500}
-                    height={500}
+                    width={80}
+                    height={80}
                     alt="Ikon Hari 3: Cari Literatur Otomatis"
                     className="w-20 h-20 object-contain"
+                    sizes="80px"
                   />
                 </div>
                 <div className="mt-2 text-lg">
@@ -493,10 +502,11 @@ export default function Home() {
                 <div className="w-20 h-20">
                   <Image
                     src="/images/step-section/4.webp"
-                    width={500}
-                    height={500}
+                    width={80}
+                    height={80}
                     alt="Ikon Hari 4: Susun BAB 1"
                     className="w-20 h-20 object-contain"
+                    sizes="80px"
                   />
                 </div>
                 <div className="mt-2 text-lg">
@@ -514,10 +524,11 @@ export default function Home() {
                 <div className="w-20 h-20">
                   <Image
                     src="/images/step-section/5.webp"
-                    width={500}
-                    height={500}
+                    width={80}
+                    height={80}
                     alt="Ikon Hari 5: Data & Olah Data"
                     className="w-20 h-20 object-contain"
+                    sizes="80px"
                   />
                 </div>
                 <div className="mt-2 text-lg">
@@ -537,10 +548,11 @@ export default function Home() {
                 <div className="w-20 h-20">
                   <Image
                     src="/images/step-section/6.webp"
-                    width={500}
-                    height={500}
+                    width={80}
+                    height={80}
                     alt="Ikon Hari 6: Susun BAB 3 & 4"
                     className="w-20 h-20 object-contain"
+                    sizes="80px"
                   />
                 </div>
                 <div className="mt-2 text-lg">
@@ -558,10 +570,11 @@ export default function Home() {
                 <div className="w-20 h-20">
                   <Image
                     src="/images/step-section/7.webp"
-                    width={500}
-                    height={500}
+                    width={80}
+                    height={80}
                     alt="Ikon Hari 7: Editing & Finalisasi"
                     className="w-20 h-20 object-contain"
+                    sizes="80px"
                   />
                 </div>
                 <div className="mt-2 text-lg">
@@ -873,10 +886,11 @@ export default function Home() {
               <div className="w-20 h-20 mx-auto">
                 <Image
                   src="/images/bonus-section/1.webp"
-                  width={200}
-                  height={200}
+                  width={80}
+                  height={80}
                   alt="Ikon Template Skripsi Siap Pakai"
                   className="w-20 h-20 object-contain"
+                  sizes="80px"
                 />
               </div>
               <div className="mt-3 font-semibold text-lg">
@@ -894,10 +908,11 @@ export default function Home() {
               <div className="w-20 h-20 mx-auto">
                 <Image
                   src="/images/bonus-section/2.webp"
-                  width={200}
-                  height={200}
+                  width={80}
+                  height={80}
                   alt="Ikon Daftar Prompt AI Skripsi"
                   className="w-20 h-20 object-contain"
+                  sizes="80px"
                 />
               </div>
               <div className="mt-3 font-semibold text-lg">
@@ -915,10 +930,11 @@ export default function Home() {
               <div className="w-20 h-20 mx-auto">
                 <Image
                   src="/images/bonus-section/3.webp"
-                  width={200}
-                  height={200}
+                  width={80}
+                  height={80}
                   alt="Ikon Panduan Bebas Plagiarisme"
                   className="w-20 h-20 object-contain"
+                  sizes="80px"
                 />
               </div>
               <div className="mt-3 font-semibold text-lg">
@@ -1022,6 +1038,7 @@ export default function Home() {
               height={720}
               alt="AI Hologram"
               className="mx-auto w-full  rounded-2xl"
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
           </motion.div>
         </div>
