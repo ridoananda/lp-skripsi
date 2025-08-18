@@ -42,7 +42,7 @@ export default function Home() {
   }, []);
   const [mobileOpen, setMobileOpen] = useState(false);
   const handleWhatsAppClick = () => {
-    const configuredNumber = process.env.WHATSAPP_NUMBER || "6281360619317";
+    const configuredNumber = process.env.WHATSAPP_NUMBER || "6285946885571";
     const sanitizedNumber = String(configuredNumber).replace(/[^0-9]/g, "");
     const message = encodeURIComponent(
       "Halo, saya tertarik dengan eBook Skripsi 7 Hari."
@@ -653,7 +653,7 @@ export default function Home() {
               <span>➡️</span>
             </motion.div>
             <div className="mt-5 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-              <div className="flex gap-4 md:gap-6 snap-x snap-mandatory">
+              <div className="flex gap-4 md:gap-6 snap-x pb-4 pt-2 snap-mandatory">
                 <motion.div
                   variants={fadeUp}
                   whileHover={{ y: -4, scale: 1.01 }}
