@@ -177,8 +177,8 @@ export default function Home() {
           <motion.section variants={fadeUp} initial="hidden" animate="visible" className="relative">
             <Image
               src="/images/skripsi-mahasiswa.webp"
-              width={1000}
-              height={1000}
+              width={720}
+              height={720}
               alt="AI Hologram"
               className="mx-auto w-full rounded-2xl"
             />
@@ -207,8 +207,8 @@ export default function Home() {
           <motion.div variants={fadeUp} className="mt-8 md:mt-12">
             <Image
               src="/images/mahasiswa-stress.webp"
-              width={1000}
-              height={1000}
+              width={720}
+              height={720}
               alt="AI Hologram"
               className="mx-auto w-full sm:w-1/2 rounded-2xl"
             />
@@ -297,8 +297,8 @@ export default function Home() {
             <motion.div variants={fadeUp}>
               <Image
                 src="/images/teaching.webp"
-                width={1000}
-                height={1000}
+                width={720}
+                height={720}
                 alt="AI Hologram"
                 className="mx-auto w-full  rounded-2xl"
               />
@@ -637,7 +637,7 @@ export default function Home() {
           <div className="mt-8 md:mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6">
             <motion.div variants={fadeUp} whileHover={{ y: -4, scale: 1.01 }} className="rounded-2xl bg-white border border-black/10 p-6 shadow-lg text-center">
               <div className="w-20 h-20 mx-auto">
-                <Image src="/images/why-section/1.webp" width={64} height={64} alt="Ikon Template Skripsi Siap Pakai" className="w-20 h-20 object-contain" />
+                <Image src="/images/bonus-section/1.webp" width={64} height={64} alt="Ikon Template Skripsi Siap Pakai" className="w-20 h-20 object-contain" />
               </div>
               <div className="mt-3 font-semibold text-lg">
                 Template Skripsi Siap Pakai
@@ -648,7 +648,7 @@ export default function Home() {
             </motion.div>
             <motion.div variants={fadeUp} whileHover={{ y: -4, scale: 1.01 }} className="rounded-2xl bg-white border border-black/10 p-6 shadow-lg text-center">
               <div className="w-20 h-20 mx-auto">
-                <Image src="/images/why-section/2.webp" width={64} height={64} alt="Ikon Daftar Prompt AI Skripsi" className="w-20 h-20 object-contain" />
+                <Image src="/images/bonus-section/2.webp" width={64} height={64} alt="Ikon Daftar Prompt AI Skripsi" className="w-20 h-20 object-contain" />
               </div>
               <div className="mt-3 font-semibold text-lg">
                 Daftar Prompt AI Skripsi
@@ -659,7 +659,7 @@ export default function Home() {
             </motion.div>
             <motion.div variants={fadeUp} whileHover={{ y: -4, scale: 1.01 }} className="rounded-2xl bg-white border border-black/10 p-6 shadow-lg text-center">
               <div className="w-20 h-20 mx-auto">
-                <Image src="/images/why-section/3.webp" width={64} height={64} alt="Ikon Panduan Bebas Plagiarisme" className="w-20 h-20 object-contain" />
+                <Image src="/images/bonus-section/3.webp" width={64} height={64} alt="Ikon Panduan Bebas Plagiarisme" className="w-20 h-20 object-contain" />
               </div>
               <div className="mt-3 font-semibold text-lg">
                 Panduan Bebas Plagiarisme
@@ -741,8 +741,8 @@ export default function Home() {
           <motion.div variants={fadeUp} className="relative">
             <Image
               src="/images/trophy.webp"
-              width={1000}
-              height={1000}
+              width={720}
+              height={720}
               alt="AI Hologram"
               className="mx-auto w-full  rounded-2xl"
             />
