@@ -61,6 +61,12 @@ export default function Home() {
       document.body.style.overflow = "";
     };
   }, [mobileOpen]);
+  const configuredNumber = process.env.WHATSAPP_NUMBER || "6285946885571";
+  const sanitizedNumber = String(configuredNumber).replace(/[^0-9]/g, "");
+  const waMessage = encodeURIComponent(
+    "Halo, saya tertarik dengan eBook Skripsi 7 Hari."
+  );
+  const whatsAppHref = `https://wa.me/${sanitizedNumber}?text=${waMessage}`;
   return (
     <>
       <div className="min-h-screen w-full bg-hero">
@@ -215,7 +221,9 @@ export default function Home() {
             </motion.p>
             <div className="mt-7 flex flex-col sm:flex-row gap-4">
               <motion.a
-                onClick={handleWhatsAppClick}
+                href={whatsAppHref}
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ y: -2, scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
                 className="btn-primary-hero rounded-xl px-5 py-3 text-base font-semibold text-center w-full sm:w-auto"
