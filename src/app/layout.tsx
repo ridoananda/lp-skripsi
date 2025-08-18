@@ -32,6 +32,9 @@ export const metadata: Metadata = {
     template: "%s | eBook Skripsi",
   },
   description: "Landing page eBook skripsi berbasis AI",
+  verification: {
+    google: "cAYCf4yCDSVDJLKPg-3ADOMHJSI9kbY7VqSDlfBKYlY",
+  },
 };
 
 export default function RootLayout({
