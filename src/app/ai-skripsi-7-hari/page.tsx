@@ -259,12 +259,12 @@ export default function Home() {
               src="/images/skripsi-mahasiswa.webp"
               width={720}
               height={720}
-              alt="AI Hologram"
+              alt="Ilustrasi mahasiswa mengerjakan skripsi dengan bantuan AI"
               className="mx-auto w-full rounded-2xl"
               priority
               loading="eager"
               fetchPriority="high"
-              sizes="(max-width: 768px) 100vw, 50vw"
+              sizes="(max-width: 768px) 364px, 400px"
             />
           </motion.section>
         </main>
@@ -299,9 +299,9 @@ export default function Home() {
               src="/images/mahasiswa-stress.webp"
               width={720}
               height={720}
-              alt="AI Hologram"
+              alt="Ilustrasi mahasiswa stres karena tugas skripsi"
               className="mx-auto w-full sm:w-1/2 rounded-2xl"
-              sizes="(max-width: 640px) 100vw, 50vw"
+              sizes="(max-width: 640px) 364px, 400px"
             />
           </motion.div>
 
@@ -316,7 +316,7 @@ export default function Home() {
                   src="/images/why-section/3.webp"
                   width={80}
                   height={80}
-                  alt="Ikon bingung memilih topik"
+                  alt="Ikon kebingungan memilih topik"
                   className="w-20 h-20 object-contain"
                   sizes="80px"
                 />
@@ -336,7 +336,7 @@ export default function Home() {
                   src="/images/why-section/2.webp"
                   width={80}
                   height={80}
-                  alt="Ikon ribet mencari jurnal"
+                  alt="Ikon sulit mencari jurnal"
                   className="w-20 h-20 object-contain"
                   sizes="80px"
                 />
@@ -356,7 +356,7 @@ export default function Home() {
                   src="/images/why-section/1.webp"
                   width={80}
                   height={80}
-                  alt="Ikon revisi yang tidak kelar"
+                  alt="Ikon revisi yang tidak selesai-selesai"
                   className="w-20 h-20 object-contain"
                   sizes="80px"
                 />
@@ -415,9 +415,9 @@ export default function Home() {
                 src="/images/teaching.webp"
                 width={720}
                 height={720}
-                alt="AI Hologram"
+                alt="Ilustrasi AI yang sedang mengajar"
                 className="mx-auto w-full  rounded-2xl"
-                sizes="(max-width: 768px) 100vw, 50vw"
+                sizes="(max-width: 768px) 364px, 400px"
               />
             </motion.div>
 
@@ -432,7 +432,7 @@ export default function Home() {
                     src="/images/step-section/1.webp"
                     width={80}
                     height={80}
-                    alt="Ikon Hari 1: Mindset & Tools AI"
+                    alt="Hari 1: Ikon mindset dan tools AI"
                     className="w-20 h-20 object-contain"
                     sizes="80px"
                   />
@@ -456,7 +456,7 @@ export default function Home() {
                     src="/images/step-section/2.webp"
                     width={80}
                     height={80}
-                    alt="Ikon Hari 2: Milih Topik Riset"
+                    alt="Hari 2: Ikon memilih topik riset"
                     className="w-20 h-20 object-contain"
                     sizes="80px"
                   />
@@ -480,7 +480,7 @@ export default function Home() {
                     src="/images/step-section/3.webp"
                     width={80}
                     height={80}
-                    alt="Ikon Hari 3: Cari Literatur Otomatis"
+                    alt="Hari 3: Ikon pencarian literatur otomatis"
                     className="w-20 h-20 object-contain"
                     sizes="80px"
                   />
@@ -504,7 +504,7 @@ export default function Home() {
                     src="/images/step-section/4.webp"
                     width={80}
                     height={80}
-                    alt="Ikon Hari 4: Susun BAB 1"
+                    alt="Hari 4: Ikon menyusun BAB 1"
                     className="w-20 h-20 object-contain"
                     sizes="80px"
                   />
@@ -526,7 +526,7 @@ export default function Home() {
                     src="/images/step-section/5.webp"
                     width={80}
                     height={80}
-                    alt="Ikon Hari 5: Data & Olah Data"
+                    alt="Hari 5: Ikon pengumpulan dan analisis data"
                     className="w-20 h-20 object-contain"
                     sizes="80px"
                   />
@@ -550,7 +550,7 @@ export default function Home() {
                     src="/images/step-section/6.webp"
                     width={80}
                     height={80}
-                    alt="Ikon Hari 6: Susun BAB 3 & 4"
+                    alt="Hari 6: Ikon menyusun BAB 3 dan 4"
                     className="w-20 h-20 object-contain"
                     sizes="80px"
                   />
@@ -572,7 +572,7 @@ export default function Home() {
                     src="/images/step-section/7.webp"
                     width={80}
                     height={80}
-                    alt="Ikon Hari 7: Editing & Finalisasi"
+                    alt="Hari 7: Ikon editing dan finalisasi"
                     className="w-20 h-20 object-contain"
                     sizes="80px"
                   />
@@ -1036,9 +1036,9 @@ export default function Home() {
               src="/images/trophy.webp"
               width={720}
               height={720}
-              alt="AI Hologram"
+              alt="Ilustrasi piala kemenangan"
               className="mx-auto w-full  rounded-2xl"
-              sizes="(max-width: 768px) 100vw, 50vw"
+              sizes="(max-width: 768px) 364px, 400px"
             />
           </motion.div>
         </div>
