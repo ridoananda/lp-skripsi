@@ -77,9 +77,18 @@ export default function Home() {
           className="w-full max-w-6xl mx-auto px-6 py-5 flex items-center justify-between"
         >
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-md bg-black/80 text-white grid place-items-center font-bold">
-              eB
-            </div>
+            <Image
+              src="/images/logo.webp"
+              width={44}
+              height={44}
+              alt="eBook Skripsi logo"
+              className="w-10 h-10 object-cover rounded-lg"
+              quality={100}
+              priority
+              loading="eager"
+              fetchPriority="high"
+              sizes="44px"
+            />
             <span className="text-sm font-medium text-white">
               eBook Skripsi
             </span>
@@ -145,9 +154,18 @@ export default function Home() {
             >
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-md bg-black/80 text-white grid place-items-center font-bold">
-                    eB
-                  </div>
+                  <Image
+                    src="/images/logo.webp"
+                    width={44}
+                    height={44}
+                    alt="eBook Skripsi logo"
+                    className="w-10 h-10 object-cover rounded-lg"
+                    quality={100}
+                    priority
+                    loading="eager"
+                    fetchPriority="high"
+                    sizes="44px"
+                  />
                   <span className="text-sm font-medium text-white">
                     eBook Skripsi
                   </span>
@@ -439,7 +457,7 @@ export default function Home() {
                 </div>
                 <div className="mt-2 text-lg">
                   <span className="font-semibold">
-                    Hari 1: Mindset & Tools AI
+                    Hari 1 – Fundamental AI: &quot;Biar AI yang Pusing, Bukan Kamu&quot;
                   </span>
                 </div>
                 <div className="mt-1 text-sm text-black/70">
@@ -463,7 +481,7 @@ export default function Home() {
                 </div>
                 <div className="mt-2 text-lg">
                   <span className="font-semibold">
-                    Hari 2: Milih Topik Riset
+                    Hari 2 – Menentukan Topik: &quot;Topik Bukan Takdir, Bisa Dinego Sama AI&quot;
                   </span>
                 </div>
                 <div className="mt-1 text-sm text-black/70">
@@ -487,7 +505,7 @@ export default function Home() {
                 </div>
                 <div className="mt-2 text-lg">
                   <span className="font-semibold">
-                    Hari 3: Cari Literatur Otomatis
+                    Hari 3 – Literatur & Referensi Otomatis
                   </span>
                 </div>
                 <div className="mt-1 text-sm text-black/70">
@@ -510,7 +528,7 @@ export default function Home() {
                   />
                 </div>
                 <div className="mt-2 text-lg">
-                  <span className="font-semibold">Hari 4: Susun BAB 1</span>
+                  <span className="font-semibold">Hari 4 – Nulis Bab 1 & 2 Tanpa Overthinking</span>
                 </div>
                 <div className="mt-1 text-sm text-black/70">
                   Struktur pendahuluan yang solid
@@ -533,7 +551,7 @@ export default function Home() {
                 </div>
                 <div className="mt-2 text-lg">
                   <span className="font-semibold">
-                    Hari 5: Data & Olah Data
+                    Hari 5 – Pengumpulan & Pengolahan Data Otomatis
                   </span>
                 </div>
                 <div className="mt-1 text-sm text-black/70">
@@ -556,7 +574,7 @@ export default function Home() {
                   />
                 </div>
                 <div className="mt-2 text-lg">
-                  <span className="font-semibold">Hari 6: Susun BAB 3 & 4</span>
+                  <span className="font-semibold">Hari 6 – Bab 3 & 4 Gak Lagi Misteri</span>
                 </div>
                 <div className="mt-1 text-sm text-black/70">
                   Metodologi & hasil riset dengan AI
@@ -579,7 +597,7 @@ export default function Home() {
                 </div>
                 <div className="mt-2 text-lg">
                   <span className="font-semibold">
-                    Hari 7: Editing & Finalisasi
+                    Hari 7 – Editing, Plagiarisme & Finalisasi
                   </span>
                 </div>
                 <div className="mt-1 text-sm text-black/70">
