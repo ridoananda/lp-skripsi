@@ -1,28 +1,24 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Poppins, Nunito } from "next/font/google";
+import { Geist_Mono, Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 
-const poppins = Poppins({
-  variable: "--font-hero-heading",
+// Inter will be our primary body font
+const inter = Inter({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
-  weight: ["700", "800", "900"],
   display: "swap",
 });
 
-const nunito = Nunito({
-  variable: "--font-hero-sub",
+// Plus Jakarta Sans for headings
+const plusJakarta = Plus_Jakarta_Sans({
+  variable: "--font-hero-heading",
   subsets: ["latin"],
-  weight: ["400", "600", "700"],
+  weight: ["600", "700", "800"],
   display: "swap",
 });
 
@@ -45,7 +41,7 @@ export default function RootLayout({
   return (
     <html lang="id">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${nunito.variable} antialiased`}
+        className={`${inter.variable} ${geistMono.variable} ${plusJakarta.variable} antialiased`}
       >
         {children}
       </body>
