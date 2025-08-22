@@ -261,13 +261,13 @@ export default function Home() {
               variants={fadeUp}
               className="font-hero-heading font-extrabold text-white text-4xl sm:text-5xl md:text-6xl leading-[1.1] tracking-tight"
             >
-              Belajar Lebih Cepat, Lebih Pintar, dengan Bantuan AI
+              Belajar Tools AI untuk Produktivitas & Cara Kerja AI
             </motion.h1>
             <motion.p
               variants={fadeUp}
               className="mt-4 text-base sm:text-lg md:text-xl text-white/80 font-hero-sub"
             >
-              Bantuan AI adalah wadah edukasi digital yang menghadirkan e-book dan iCourse interaktif berbasis AI.
+              Bantuan AI adalah wadah edukasi digital yang mengajarkan cara menggunakan tools AI untuk produktivitas dan memahami bagaimana AI bekerja dalam kehidupan sehari-hari.
             </motion.p>
             <div className="mt-7 flex flex-col sm:flex-row gap-4">
               <motion.a
@@ -330,13 +330,13 @@ export default function Home() {
               variants={fadeUp}
               className="font-hero-heading font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight text-[#1B3C53]"
             >
-              Kenapa Bantuan AI?
+              Kenapa Belajar Tools AI?
             </motion.h2>
             <motion.p
               variants={fadeUp}
               className="mt-3 text-base sm:text-lg text-black/70 font-hero-sub"
             >
-              Nilai yang kamu dapat saat belajar bersama AI.
+              Nilai yang kamu dapat saat mempelajari tools AI untuk produktivitas dan memahami cara kerja AI.
             </motion.p>
           </div>
 
@@ -346,10 +346,10 @@ export default function Home() {
               whileHover={{ y: -4, scale: 1.01 }}
               className="rounded-2xl bg-white border border-black/10 p-6 shadow-lg"
             >
-              <div className="w-16 h-16 rounded-xl bg-[#eaefff] grid place-items-center text-2xl">📚</div>
-              <div className="mt-3 font-semibold text-lg">E-book Digital</div>
+              <div className="w-16 h-16 rounded-xl bg-[#eaefff] grid place-items-center text-2xl">🛠️</div>
+              <div className="mt-3 font-semibold text-lg">Tools AI Praktis</div>
               <div className="mt-1 text-sm text-[#1B3C53]/70">
-                Materi praktis, ringkas, dan mudah dipahami.
+                Belajar menggunakan tools AI yang bisa langsung diterapkan untuk produktivitas sehari-hari.
               </div>
             </motion.div>
             <motion.div
@@ -357,10 +357,10 @@ export default function Home() {
               whileHover={{ y: -4, scale: 1.01 }}
               className="rounded-2xl bg-white border border-black/10 p-6 shadow-lg"
             >
-              <div className="w-16 h-16 rounded-xl bg-[#eafff2] grid place-items-center text-2xl">🎓</div>
-              <div className="mt-3 font-semibold text-lg">iCourse AI</div>
+              <div className="w-16 h-16 rounded-xl bg-[#eafff2] grid place-items-center text-2xl">🧠</div>
+              <div className="mt-3 font-semibold text-lg">Pemahaman AI</div>
               <div className="mt-1 text-sm text-[#1B3C53]/70">
-                Belajar interaktif, langsung dibimbing AI.
+                Memahami cara kerja AI, bukan hanya menggunakannya, tapi juga bagaimana AI berpikir dan bekerja.
               </div>
             </motion.div>
             <motion.div
@@ -368,10 +368,10 @@ export default function Home() {
               whileHover={{ y: -4, scale: 1.01 }}
               className="rounded-2xl bg-white border border-black/10 p-6 shadow-lg"
             >
-              <div className="w-16 h-16 rounded-xl bg-[#fff6db] grid place-items-center text-2xl">🚀</div>
-              <div className="mt-3 font-semibold text-lg">Solusi Tepat</div>
+              <div className="w-16 h-16 rounded-xl bg-[#fff6db] grid place-items-center text-2xl">⚡</div>
+              <div className="mt-3 font-semibold text-lg">Produktivitas Maksimal</div>
               <div className="mt-1 text-sm text-[#1B3C53]/70">
-                Disusun untuk kebutuhan nyata, bukan sekadar teori.
+                Tingkatkan efisiensi kerja dengan mengoptimalkan penggunaan AI tools yang tepat.
               </div>
             </motion.div>
           </div>
@@ -392,61 +392,61 @@ export default function Home() {
               variants={fadeUp}
               className="font-hero-heading font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight text-[#1B3C53]"
             >
-              Fitur Unggulan AI Learning
+              Fitur Unggulan AI Tools Learning
             </motion.h2>
             <motion.p
               variants={fadeUp}
               className="mt-3 text-base sm:text-lg text-black/70 font-hero-sub"
             >
-              Teknologi AI yang membuat belajar jadi lebih efektif dan menyenangkan.
+              Teknologi dan fitur yang membuat belajar tools AI jadi lebih efektif dan produktif.
             </motion.p>
           </div>
 
           <div className="mt-8 md:mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
             <motion.div variants={fadeUp} className="space-y-6">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[#eaefff] grid place-items-center text-xl flex-shrink-0">🤖</div>
+                <div className="w-12 h-12 rounded-xl bg-[#eaefff] grid place-items-center text-xl flex-shrink-0">🔧</div>
                 <div>
-                  <h3 className="font-semibold text-lg">AI Personal Assistant</h3>
-                  <p className="text-sm text-black/70 mt-1">AI yang memahami gaya belajar kamu dan memberikan rekomendasi yang tepat.</p>
+                  <h3 className="font-semibold text-lg">Hands-on Practice</h3>
+                  <p className="text-sm text-black/70 mt-1">Latihan langsung menggunakan tools AI seperti ChatGPT, Midjourney, dan tools produktivitas lainnya.</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded-xl bg-[#eafff2] grid place-items-center text-xl flex-shrink-0">📊</div>
                 <div>
-                  <h3 className="font-semibold text-lg">Progress Tracking</h3>
-                  <p className="text-sm text-black/70 mt-1">Monitor kemajuan belajar dengan analisis detail dan insight yang akurat.</p>
+                  <h3 className="font-semibold text-lg">Use Case Examples</h3>
+                  <p className="text-sm text-black/70 mt-1">Contoh nyata penggunaan AI tools untuk berbagai bidang pekerjaan dan kehidupan sehari-hari.</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded-xl bg-[#fff6db] grid place-items-center text-xl flex-shrink-0">🎯</div>
                 <div>
-                  <h3 className="font-semibold text-lg">Adaptive Learning</h3>
-                  <p className="text-sm text-black/70 mt-1">Materi yang menyesuaikan dengan kemampuan dan kecepatan belajar kamu.</p>
+                  <h3 className="font-semibold text-lg">Prompt Engineering</h3>
+                  <p className="text-sm text-black/70 mt-1">Belajar cara menulis prompt yang efektif untuk mendapatkan hasil optimal dari AI tools.</p>
                 </div>
               </div>
             </motion.div>
 
             <motion.div variants={fadeUp} className="space-y-6">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[#fef3c7] grid place-items-center text-xl flex-shrink-0">💬</div>
+                <div className="w-12 h-12 rounded-xl bg-[#fef3c7] grid place-items-center text-xl flex-shrink-0">💡</div>
                 <div>
-                  <h3 className="font-semibold text-lg">Interactive Chat</h3>
-                  <p className="text-sm text-black/70 mt-1">Tanya jawab langsung dengan AI untuk pemahaman yang lebih mendalam.</p>
+                  <h3 className="font-semibold text-lg">AI Workflow Integration</h3>
+                  <p className="text-sm text-black/70 mt-1">Cara mengintegrasikan AI tools ke dalam workflow kerja sehari-hari untuk efisiensi maksimal.</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[#fce7f3] grid place-items-center text-xl flex-shrink-0">📱</div>
+                <div className="w-12 h-12 rounded-xl bg-[#fce7f3] grid place-items-center text-xl flex-shrink-0">🚀</div>
                 <div>
-                  <h3 className="font-semibold text-lg">Multi-Platform</h3>
-                  <p className="text-sm text-black/70 mt-1">Akses dari mana saja, desktop, tablet, atau smartphone.</p>
+                  <h3 className="font-semibold text-lg">Productivity Hacks</h3>
+                  <p className="text-sm text-black/70 mt-1">Tips dan trik menggunakan AI untuk menghemat waktu dan meningkatkan output kerja.</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[#dbeafe] grid place-items-center text-xl flex-shrink-0">⚡</div>
+                <div className="w-12 h-12 rounded-xl bg-[#dbeafe] grid place-items-center text-xl flex-shrink-0">🔍</div>
                 <div>
-                  <h3 className="font-semibold text-lg">Real-time Updates</h3>
-                  <p className="text-sm text-black/70 mt-1">Konten yang selalu fresh dan up-to-date dengan perkembangan terbaru.</p>
+                  <h3 className="font-semibold text-lg">AI Tools Comparison</h3>
+                  <p className="text-sm text-black/70 mt-1">Perbandingan berbagai AI tools untuk membantu memilih yang paling sesuai dengan kebutuhan.</p>
                 </div>
               </div>
             </motion.div>
@@ -468,13 +468,13 @@ export default function Home() {
               variants={fadeUp}
               className="font-hero-heading font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight text-[#1B3C53]"
             >
-              Keuntungan Belajar dengan AI
+              Keuntungan Belajar Tools AI
             </motion.h2>
             <motion.p
               variants={fadeUp}
               className="mt-3 text-base sm:text-lg text-black/70 font-hero-sub"
             >
-              Transformasi cara belajar yang lebih efisien dan hasil yang maksimal.
+              Transformasi cara kerja yang lebih efisien dengan menguasai tools AI untuk produktivitas maksimal.
             </motion.p>
           </div>
 
@@ -486,7 +486,7 @@ export default function Home() {
             >
               <div className="w-16 h-16 mx-auto rounded-full bg-[#eaefff] grid place-items-center text-2xl mb-4">⏰</div>
               <h3 className="font-semibold text-lg mb-2">Hemat Waktu</h3>
-              <p className="text-sm text-black/70">Belajar 3x lebih cepat dengan bantuan AI yang efisien.</p>
+              <p className="text-sm text-black/70">Otomatisasi tugas dengan AI tools, hemat 70% waktu kerja.</p>
             </motion.div>
             <motion.div
               variants={fadeUp}
@@ -494,8 +494,8 @@ export default function Home() {
               className="text-center p-6"
             >
               <div className="w-16 h-16 mx-auto rounded-full bg-[#eafff2] grid place-items-center text-2xl mb-4">🎯</div>
-              <h3 className="font-semibold text-lg mb-2">Fokus Optimal</h3>
-              <p className="text-sm text-black/70">Materi yang disesuaikan dengan kebutuhan dan kemampuan kamu.</p>
+              <h3 className="font-semibold text-lg mb-2">Skill Masa Depan</h3>
+              <p className="text-sm text-black/70">Kuasi skill AI yang dibutuhkan di era digital dan AI.</p>
             </motion.div>
             <motion.div
               variants={fadeUp}
@@ -503,8 +503,8 @@ export default function Home() {
               className="text-center p-6"
             >
               <div className="w-16 h-16 mx-auto rounded-full bg-[#fff6db] grid place-items-center text-2xl mb-4">📈</div>
-              <h3 className="font-semibold text-lg mb-2">Hasil Maksimal</h3>
-              <p className="text-sm text-black/70">Pencapaian belajar yang lebih tinggi dengan metode yang tepat.</p>
+              <h3 className="font-semibold text-lg mb-2">Output Berkualitas</h3>
+              <p className="text-sm text-black/70">Hasil kerja yang lebih berkualitas dengan bantuan AI tools.</p>
             </motion.div>
             <motion.div
               variants={fadeUp}
@@ -512,8 +512,8 @@ export default function Home() {
               className="text-center p-6"
             >
               <div className="w-16 h-16 mx-auto rounded-full bg-[#fce7f3] grid place-items-center text-2xl mb-4">💡</div>
-              <h3 className="font-semibold text-lg mb-2">Pemahaman Mendalam</h3>
-              <p className="text-sm text-black/70">Konsep yang dipahami dengan baik, bukan sekadar hafalan.</p>
+              <h3 className="font-semibold text-lg mb-2">Kreativitas Meningkat</h3>
+              <p className="text-sm text-black/70">AI tools membantu mengembangkan ide kreatif dan inovasi.</p>
             </motion.div>
           </div>
         </div>
@@ -533,32 +533,32 @@ export default function Home() {
               variants={fadeUp}
               className="font-hero-heading font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight text-white"
             >
-              Angka yang Membuktikan
+              Hasil Belajar Tools AI
             </motion.h2>
             <motion.p
               variants={fadeUp}
               className="mt-3 text-base sm:text-lg text-white/80 font-hero-sub"
             >
-              Hasil nyata dari ribuan pembelajar yang telah merasakan manfaat AI.
+              Bukti nyata dari ribuan peserta yang telah menguasai AI tools untuk produktivitas.
             </motion.p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <motion.div variants={fadeUp} className="space-y-2">
-              <div className="text-4xl md:text-5xl font-bold text-white">10K+</div>
-              <div className="text-sm text-white/70">Pembelajar Aktif</div>
+              <div className="text-4xl md:text-5xl font-bold text-white">5K+</div>
+              <div className="text-sm text-white/70">Peserta Aktif</div>
             </motion.div>
             <motion.div variants={fadeUp} className="space-y-2">
-              <div className="text-4xl md:text-5xl font-bold text-white">95%</div>
-              <div className="text-sm text-white/70">Tingkat Kepuasan</div>
+              <div className="text-4xl md:text-5xl font-bold text-white">70%</div>
+              <div className="text-sm text-white/70">Peningkatan Produktivitas</div>
             </motion.div>
             <motion.div variants={fadeUp} className="space-y-2">
-              <div className="text-4xl md:text-5xl font-bold text-white">3x</div>
-              <div className="text-sm text-white/70">Lebih Cepat Paham</div>
+              <div className="text-4xl md:text-5xl font-bold text-white">2-4</div>
+              <div className="text-sm text-white/70">Minggu Kuasai Tools</div>
             </motion.div>
             <motion.div variants={fadeUp} className="space-y-2">
-              <div className="text-4xl md:text-5xl font-bold text-white">24/7</div>
-              <div className="text-sm text-white/70">Dukungan AI</div>
+              <div className="text-4xl md:text-5xl font-bold text-white">15+</div>
+              <div className="text-sm text-white/70">AI Tools Dipelajari</div>
             </motion.div>
           </div>
         </div>
@@ -739,15 +739,15 @@ export default function Home() {
           <div className="text-center max-w-3xl mx-auto">
             <motion.h2
               variants={fadeUp}
-              className="font-hero-heading font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight text-[#1B3C53]"
+              className="font-hero-heading font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight text-white"
             >
-              FAQ
+              FAQ Tools AI
             </motion.h2>
             <motion.p
               variants={fadeUp}
-              className="mt-3 text-base sm:text-lg text-black/70 font-hero-sub"
+              className="mt-3 text-base sm:text-lg font-hero-sub text-white"
             >
-              Pertanyaan yang sering ditanyakan.
+              Pertanyaan seputar belajar tools AI dan produktivitas.
             </motion.p>
           </div>
 
@@ -760,8 +760,8 @@ export default function Home() {
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-full bg-[#eaefff] grid place-items-center text-xl flex-shrink-0">❓</div>
                 <div>
-                  <h3 className="font-semibold text-lg">Apa itu Bantuan AI?</h3>
-                  <p className="text-sm text-black/70 mt-1">Bantuan AI adalah platform edukasi digital yang menghadirkan e-book dan iCourse interaktif berbasis AI untuk membantu pembelajaran.</p>
+                  <h3 className="font-semibold text-lg">Apa yang akan saya pelajari?</h3>
+                  <p className="text-sm text-black/70 mt-1">Anda akan belajar cara menggunakan tools AI seperti ChatGPT, Midjourney, dan lainnya untuk meningkatkan produktivitas kerja.</p>
                 </div>
               </div>
             </motion.div>
@@ -773,8 +773,8 @@ export default function Home() {
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-full bg-[#eafff2] grid place-items-center text-xl flex-shrink-0">🎓</div>
                 <div>
-                  <h3 className="font-semibold text-lg">Apa keunggulan iCourse AI?</h3>
-                  <p className="text-sm text-black/70 mt-1">iCourse AI menawarkan pembelajaran interaktif, langsung dibimbing AI, dan memiliki fitur adaptive learning untuk menyesuaikan dengan kemampuan belajar kamu.</p>
+                  <h3 className="font-semibold text-lg">Apakah saya perlu background AI?</h3>
+                  <p className="text-sm text-black/70 mt-1">Tidak! Materi dirancang untuk pemula. Kami akan mengajarkan dari dasar cara kerja AI hingga penggunaan praktis.</p>
                 </div>
               </div>
             </motion.div>
@@ -786,8 +786,8 @@ export default function Home() {
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-full bg-[#fff6db] grid place-items-center text-xl flex-shrink-0">🚀</div>
                 <div>
-                  <h3 className="font-semibold text-lg">Apa manfaat AI untuk belajar?</h3>
-                  <p className="text-sm text-black/70 mt-1">AI dapat membantu pemahaman materi dengan lebih cepat dan efisien, memberikan rekomendasi yang tepat, dan membantu kamu fokus pada materi yang penting.</p>
+                  <h3 className="font-semibold text-lg">Berapa lama bisa menguasai tools AI?</h3>
+                  <p className="text-sm text-black/70 mt-1">Dengan metode kami, dalam 2-4 minggu Anda sudah bisa menggunakan AI tools untuk produktivitas sehari-hari.</p>
                 </div>
               </div>
             </motion.div>
@@ -799,8 +799,8 @@ export default function Home() {
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-full bg-[#fce7f3] grid place-items-center text-xl flex-shrink-0">📱</div>
                 <div>
-                  <h3 className="font-semibold text-lg">Apakah Bantuan AI tersedia di berbagai platform?</h3>
-                  <p className="text-sm text-black/70 mt-1">Bantuan AI tersedia melalui website dan aplikasi mobile, memudahkan akses dari mana saja, kapan saja.</p>
+                  <h3 className="font-semibold text-lg">Tools AI apa saja yang akan dipelajari?</h3>
+                  <p className="text-sm text-black/70 mt-1">ChatGPT, Midjourney, Notion AI, Grammarly, dan berbagai tools produktivitas AI lainnya yang relevan.</p>
                 </div>
               </div>
             </motion.div>
