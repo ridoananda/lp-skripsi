@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
 
 import { fadeIn } from "@/lib/animations";
 
@@ -93,6 +94,14 @@ export default function Header() {
           >
             Testimoni
           </motion.a>
+          <motion.div
+            whileHover={{ y: -1, opacity: 0.9 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            <Link href="/blog" className="hover:underline">
+              Blog
+            </Link>
+          </motion.div>
           <motion.a
             href="#cta"
             whileHover={{ y: -2, scale: 1.03 }}
@@ -196,6 +205,13 @@ export default function Header() {
               >
                 Testimoni
               </a>
+              <Link
+                href="/blog"
+                onClick={() => setMobileOpen(false)}
+                className="px-3 py-2 rounded-md hover:bg-white/10"
+              >
+                Blog
+              </Link>
               <a
                 href="#faq"
                 onClick={() => setMobileOpen(false)}

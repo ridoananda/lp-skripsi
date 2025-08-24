@@ -7,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/private/', '/admin/'],
     },
-    sitemap: 'https://bantuanai.com/sitemap.xml',
+    sitemap: 'https://bantuanaiq.id/sitemap.xml',
   }
 }
 
