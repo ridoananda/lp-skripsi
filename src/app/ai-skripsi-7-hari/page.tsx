@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
@@ -46,7 +47,7 @@ export default function Home() {
     const configuredNumber = process.env.WHATSAPP_NUMBER || "6285946885571";
     const sanitizedNumber = String(configuredNumber).replace(/[^0-9]/g, "");
     const message = encodeURIComponent(
-      "Halo, saya tertarik dengan eBook Skripsi 7 Hari."
+      "Halo, saya tertarik dengan E-book Skripsi 7 Hari."
     );
     const url = `https://wa.me/${sanitizedNumber}?text=${message}`;
     window.open(url, "_blank", "noopener,noreferrer");
@@ -65,7 +66,7 @@ export default function Home() {
   const configuredNumber = process.env.WHATSAPP_NUMBER || "6285946885571";
   const sanitizedNumber = String(configuredNumber).replace(/[^0-9]/g, "");
   const waMessage = encodeURIComponent(
-    "Halo, saya tertarik dengan eBook Skripsi 7 Hari."
+    "Halo, saya tertarik dengan E-book Skripsi 7 Hari."
   );
   const whatsAppHref = `https://wa.me/${sanitizedNumber}?text=${waMessage}`;
   return (
@@ -78,7 +79,7 @@ export default function Home() {
         n.queue=[];t=b.createElement(e);t.async=!0;
         t.src=v;s=b.getElementsByTagName(e)[0];
         s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
+        'https://connect.facE-book.net/en_US/fbevents.js');
         fbq('init', '1258221552283963');
         fbq('track', 'PageView');
       `}</Script>
@@ -87,7 +88,7 @@ export default function Home() {
           height="1"
           width="1"
           style={{ display: "none" }}
-          src="https://www.facebook.com/tr?id=1258221552283963&ev=PageView&noscript=1"
+          src="https://www.facE-book.com/tr?id=1258221552283963&ev=PageView&noscript=1"
           alt="fb-pixel"
         />
       </noscript>
@@ -99,20 +100,22 @@ export default function Home() {
           className="w-full max-w-6xl mx-auto px-6 py-5 flex items-center justify-between"
         >
           <div className="flex items-center gap-3">
-            <Image
-              src="/images/logo.webp"
-              width={44}
-              height={44}
-              alt="eBook Skripsi logo"
-              className="w-10 h-10 object-cover rounded-lg"
-              quality={100}
-              priority
-              loading="eager"
-              fetchPriority="high"
-              sizes="44px"
-            />
+            <Link href="/">
+              <Image
+                src="/images/logo.webp"
+                width={44}
+                height={44}
+                alt="E-book Skripsi logo"
+                className="w-10 h-10 object-cover rounded-lg"
+                quality={100}
+                priority
+                loading="eager"
+                fetchPriority="high"
+                sizes="44px"
+              />
+            </Link>
             <span className="text-sm font-medium text-white">
-              eBook Skripsi
+              E-book Skripsi
             </span>
           </div>
           <nav className="hidden md:flex items-center gap-6 text-white text-sm">
@@ -184,20 +187,22 @@ export default function Home() {
             >
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <Image
-                    src="/images/logo.webp"
-                    width={44}
-                    height={44}
-                    alt="eBook Skripsi logo"
-                    className="w-10 h-10 object-cover rounded-lg"
-                    quality={100}
-                    priority
-                    loading="eager"
-                    fetchPriority="high"
-                    sizes="44px"
-                  />
+                  <Link href="/">
+                    <Image
+                      src="/images/logo.webp"
+                      width={44}
+                      height={44}
+                      alt="E-book Skripsi logo"
+                      className="w-10 h-10 object-cover rounded-lg"
+                      quality={100}
+                      priority
+                      loading="eager"
+                      fetchPriority="high"
+                      sizes="44px"
+                    />
+                  </Link>
                   <span className="text-sm font-medium text-white">
-                    eBook Skripsi
+                    E-book Skripsi
                   </span>
                 </div>
                 <button
@@ -429,7 +434,7 @@ export default function Home() {
               className="rounded-2xl px-5 py-4 bg-white/90 border border-[#1B3C53]/10 shadow max-w-md mx-auto"
             >
               <div className="text-center font-semibold">
-                &quot;Kami paham... makanya eBook ini hadir!&quot;
+                &quot;Kami paham... makanya E-book ini hadir!&quot;
               </div>
               <div className="text-center text-sm text-[#1B3C53]/70 mt-1">
                 😌 Tenang… semua ini bisa di-handle sama AI kalau tau caranya.
@@ -672,7 +677,7 @@ export default function Home() {
               variants={fadeUp}
               className="font-hero-heading font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight text-[#1B3C53]"
             >
-              Intip Isi eBook-nya 📖
+              Intip Isi E-book-nya 📖
             </motion.h2>
             <motion.p
               variants={fadeUp}
@@ -728,7 +733,7 @@ export default function Home() {
                     />
                   </div>
                   <div className="absolute bottom-3 left-3 px-3 py-1 rounded-full text-xs font-medium bg-black/70 text-white">
-                    Halaman eBook Hari 1
+                    Halaman E-book Hari 1
                   </div>
                 </motion.div>
 
@@ -766,7 +771,7 @@ export default function Home() {
                     />
                   </div>
                   <div className="absolute bottom-3 left-3 px-3 py-1 rounded-full text-xs font-medium bg-black/70 text-white">
-                    Halaman eBook Hari 2
+                    Halaman E-book Hari 2
                   </div>
                 </motion.div>
               </div>
@@ -927,7 +932,7 @@ export default function Home() {
               variants={fadeUp}
               className="mt-3 text-base sm:text-lg text-black/70 font-hero-sub"
             >
-              Semua pembelian eBook ini akan mendapatkan bonus eksklusif yang
+              Semua pembelian E-book ini akan mendapatkan bonus eksklusif yang
               bikin proses skripsi kamu makin gampang.
             </motion.p>
           </div>
@@ -1012,7 +1017,7 @@ export default function Home() {
                     💎 Total value Rp 500.000, sekarang cuma 99K!
                   </div>
                   <div className="text-sm text-[#1B3C53]/70">
-                    Dapatkan semua bonus + eBook dalam sekali beli.
+                    Dapatkan semua bonus + E-book dalam sekali beli.
                   </div>
                 </div>
                 <div>
@@ -1023,7 +1028,7 @@ export default function Home() {
                     className="btn-primary-hero inline-flex rounded-xl px-6 py-3 text-base font-semibold text-center w-full sm:w-auto"
                     onClick={handleWhatsAppClick}
                   >
-                    🔥 Ambil Semua Bonus & eBook Sekarang
+                    🔥 Ambil Semua Bonus & E-book Sekarang
                   </motion.button>
                 </div>
               </div>
@@ -1097,7 +1102,7 @@ export default function Home() {
                   whileTap={{ scale: 0.98 }}
                   className="w-full bg-[#1B3C53] text-white font-semibold py-3 px-4 rounded-xl hover:bg-[#1B3C53]/90 transition-colors"
                   onClick={() => {
-                    const message = encodeURIComponent("Halo, saya tertarik dengan paket BASIC eBook Skripsi 7 Hari (39K).");
+                    const message = encodeURIComponent("Halo, saya tertarik dengan paket BASIC E-book Skripsi 7 Hari (39K).");
                     window.open(`https://wa.me/${sanitizedNumber}?text=${message}`, "_blank", "noopener,noreferrer");
                   }}
                 >
@@ -1148,7 +1153,7 @@ export default function Home() {
                   whileTap={{ scale: 0.98 }}
                   className="w-full bg-white text-[#1B3C53] font-semibold py-3 px-4 rounded-xl border-2 border-[#1B3C53] hover:bg-[#1B3C53] hover:text-white transition-colors"
                   onClick={() => {
-                    const message = encodeURIComponent("Halo, saya tertarik dengan paket PRO eBook Skripsi 7 Hari (59K).");
+                    const message = encodeURIComponent("Halo, saya tertarik dengan paket PRO E-book Skripsi 7 Hari (59K).");
                     window.open(`https://wa.me/${sanitizedNumber}?text=${message}`, "_blank", "noopener,noreferrer");
                   }}
                 >
@@ -1197,7 +1202,7 @@ export default function Home() {
                   whileTap={{ scale: 0.98 }}
                   className="w-full bg-[#1B3C53] text-white font-semibold py-3 px-4 rounded-xl hover:bg-[#1B3C53]/90 transition-colors"
                   onClick={() => {
-                    const message = encodeURIComponent("Halo, saya tertarik dengan paket ULTIMATE eBook Skripsi 7 Hari (89K).");
+                    const message = encodeURIComponent("Halo, saya tertarik dengan paket ULTIMATE E-book Skripsi 7 Hari (89K).");
                     window.open(`https://wa.me/${sanitizedNumber}?text=${message}`, "_blank", "noopener,noreferrer");
                   }}
                 >
@@ -1239,7 +1244,7 @@ export default function Home() {
               className="mt-6 space-y-3 text-white/90"
             >
               <li>
-                ✅ <span className="font-semibold">eBook Lengkap</span> 7 Hari
+                ✅ <span className="font-semibold">E-book Lengkap</span> 7 Hari
                 Kelar Skripsi
               </li>
               <li>
