@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Script from "next/script";
+import FloatingWhatsApp from "@/components/ui/FloatingWhatsApp";
 
 export default function Home() {
   const fadeUp = {
@@ -1282,6 +1283,9 @@ export default function Home() {
           </motion.div>
         </div>
       </motion.section>
+
+      {/* Floating WhatsApp CTA Button */}
+      <FloatingWhatsApp />
     </>
   );
 }
