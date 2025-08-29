@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
@@ -46,7 +47,7 @@ export default function Home() {
     const configuredNumber = process.env.WHATSAPP_NUMBER || "6285946885571";
     const sanitizedNumber = String(configuredNumber).replace(/[^0-9]/g, "");
     const message = encodeURIComponent(
-      "Halo, saya tertarik dengan eBook Skripsi 7 Hari."
+      "Halo, saya tertarik dengan E-book Skripsi 7 Hari."
     );
     const url = `https://wa.me/${sanitizedNumber}?text=${message}`;
     window.open(url, "_blank", "noopener,noreferrer");
@@ -65,7 +66,7 @@ export default function Home() {
   const configuredNumber = process.env.WHATSAPP_NUMBER || "6285946885571";
   const sanitizedNumber = String(configuredNumber).replace(/[^0-9]/g, "");
   const waMessage = encodeURIComponent(
-    "Halo, saya tertarik dengan eBook Skripsi 7 Hari."
+    "Halo, saya tertarik dengan E-book Skripsi 7 Hari."
   );
   const whatsAppHref = `https://wa.me/${sanitizedNumber}?text=${waMessage}`;
   return (
@@ -78,7 +79,7 @@ export default function Home() {
         n.queue=[];t=b.createElement(e);t.async=!0;
         t.src=v;s=b.getElementsByTagName(e)[0];
         s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
+        'https://connect.facE-book.net/en_US/fbevents.js');
         fbq('init', '1258221552283963');
         fbq('track', 'PageView');
       `}</Script>
@@ -87,7 +88,7 @@ export default function Home() {
           height="1"
           width="1"
           style={{ display: "none" }}
-          src="https://www.facebook.com/tr?id=1258221552283963&ev=PageView&noscript=1"
+          src="https://www.facE-book.com/tr?id=1258221552283963&ev=PageView&noscript=1"
           alt="fb-pixel"
         />
       </noscript>
@@ -99,20 +100,22 @@ export default function Home() {
           className="w-full max-w-6xl mx-auto px-6 py-5 flex items-center justify-between"
         >
           <div className="flex items-center gap-3">
-            <Image
-              src="/images/logo.webp"
-              width={44}
-              height={44}
-              alt="eBook Skripsi logo"
-              className="w-10 h-10 object-cover rounded-lg"
-              quality={100}
-              priority
-              loading="eager"
-              fetchPriority="high"
-              sizes="44px"
-            />
+            <Link href="/">
+              <Image
+                src="/images/logo.webp"
+                width={44}
+                height={44}
+                alt="E-book Skripsi logo"
+                className="w-10 h-10 object-cover rounded-lg"
+                quality={100}
+                priority
+                loading="eager"
+                fetchPriority="high"
+                sizes="44px"
+              />
+            </Link>
             <span className="text-sm font-medium text-white">
-              eBook Skripsi
+              E-book Skripsi
             </span>
           </div>
           <nav className="hidden md:flex items-center gap-6 text-white text-sm">
@@ -139,6 +142,14 @@ export default function Home() {
               className="hover:underline"
             >
               Bonus
+            </motion.a>
+            <motion.a
+              href="#harga"
+              whileHover={{ y: -1, opacity: 0.9 }}
+              whileTap={{ scale: 0.98 }}
+              className="hover:underline"
+            >
+              Harga
             </motion.a>
             <motion.button
               type="button"
@@ -176,20 +187,22 @@ export default function Home() {
             >
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <Image
-                    src="/images/logo.webp"
-                    width={44}
-                    height={44}
-                    alt="eBook Skripsi logo"
-                    className="w-10 h-10 object-cover rounded-lg"
-                    quality={100}
-                    priority
-                    loading="eager"
-                    fetchPriority="high"
-                    sizes="44px"
-                  />
+                  <Link href="/">
+                    <Image
+                      src="/images/logo.webp"
+                      width={44}
+                      height={44}
+                      alt="E-book Skripsi logo"
+                      className="w-10 h-10 object-cover rounded-lg"
+                      quality={100}
+                      priority
+                      loading="eager"
+                      fetchPriority="high"
+                      sizes="44px"
+                    />
+                  </Link>
                   <span className="text-sm font-medium text-white">
-                    eBook Skripsi
+                    E-book Skripsi
                   </span>
                 </div>
                 <button
@@ -221,6 +234,13 @@ export default function Home() {
                   className="px-3 py-2 rounded-md hover:bg-white/10"
                 >
                   Bonus
+                </a>
+                <a
+                  href="#harga"
+                  onClick={() => setMobileOpen(false)}
+                  className="px-3 py-2 rounded-md hover:bg-white/10"
+                >
+                  harga
                 </a>
                 <button
                   type="button"
@@ -414,7 +434,7 @@ export default function Home() {
               className="rounded-2xl px-5 py-4 bg-white/90 border border-[#1B3C53]/10 shadow max-w-md mx-auto"
             >
               <div className="text-center font-semibold">
-                &quot;Kami paham... makanya eBook ini hadir!&quot;
+                &quot;Kami paham... makanya E-book ini hadir!&quot;
               </div>
               <div className="text-center text-sm text-[#1B3C53]/70 mt-1">
                 😌 Tenang… semua ini bisa di-handle sama AI kalau tau caranya.
@@ -657,7 +677,7 @@ export default function Home() {
               variants={fadeUp}
               className="font-hero-heading font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight text-[#1B3C53]"
             >
-              Intip Isi eBook-nya 📖
+              Intip Isi E-book-nya 📖
             </motion.h2>
             <motion.p
               variants={fadeUp}
@@ -713,7 +733,7 @@ export default function Home() {
                     />
                   </div>
                   <div className="absolute bottom-3 left-3 px-3 py-1 rounded-full text-xs font-medium bg-black/70 text-white">
-                    Halaman eBook Hari 1
+                    Halaman E-book Hari 1
                   </div>
                 </motion.div>
 
@@ -751,7 +771,7 @@ export default function Home() {
                     />
                   </div>
                   <div className="absolute bottom-3 left-3 px-3 py-1 rounded-full text-xs font-medium bg-black/70 text-white">
-                    Halaman eBook Hari 2
+                    Halaman E-book Hari 2
                   </div>
                 </motion.div>
               </div>
@@ -912,7 +932,7 @@ export default function Home() {
               variants={fadeUp}
               className="mt-3 text-base sm:text-lg text-black/70 font-hero-sub"
             >
-              Semua pembelian eBook ini akan mendapatkan bonus eksklusif yang
+              Semua pembelian E-book ini akan mendapatkan bonus eksklusif yang
               bikin proses skripsi kamu makin gampang.
             </motion.p>
           </div>
@@ -997,7 +1017,7 @@ export default function Home() {
                     💎 Total value Rp 500.000, sekarang cuma 99K!
                   </div>
                   <div className="text-sm text-[#1B3C53]/70">
-                    Dapatkan semua bonus + eBook dalam sekali beli.
+                    Dapatkan semua bonus + E-book dalam sekali beli.
                   </div>
                 </div>
                 <div>
@@ -1008,12 +1028,191 @@ export default function Home() {
                     className="btn-primary-hero inline-flex rounded-xl px-6 py-3 text-base font-semibold text-center w-full sm:w-auto"
                     onClick={handleWhatsAppClick}
                   >
-                    🔥 Ambil Semua Bonus & eBook Sekarang
+                    🔥 Ambil Semua Bonus & E-book Sekarang
                   </motion.button>
                 </div>
               </div>
             </motion.div>
           </div>
+        </div>
+      </motion.section>
+
+      <motion.section
+        id="harga"
+        className="w-full bg-solution py-16 md:py-24"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={stagger}
+      >
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center max-w-3xl mx-auto">
+            <motion.h2
+              variants={fadeUp}
+              className="font-hero-heading font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight text-[#1B3C53]"
+            >
+              Paket Bundle
+            </motion.h2>
+            <motion.p
+              variants={fadeUp}
+              className="mt-3 text-base sm:text-lg text-[#1B3C53]/70 font-hero-sub italic"
+            >
+              ~Biar AI yang kerja, kamu tinggal wisuda~
+            </motion.p>
+          </div>
+
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
+            {/* Basic Tier */}
+            <motion.div
+              variants={fadeUp}
+              whileHover={{ y: -8, scale: 1.02 }}
+              className="relative rounded-2xl bg-gradient-to-br from-amber-50 to-yellow-100 border-2 border-amber-200 p-6 shadow-xl hover:shadow-2xl transition-all duration-300"
+            >
+              <div className="absolute -top-4 left-6">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center shadow-lg">
+                  <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                    <div className="w-4 h-4 bg-blue-500 rounded-full"></div>
+                  </div>
+                </div>
+              </div>
+              <div className="text-center pt-4">
+                <h3 className="text-2xl font-bold text-[#1B3C53] mb-4">BASIC</h3>
+                <div className="space-y-3 mb-6">
+                  <div className="text-sm text-[#1B3C53]/70">Feature:</div>
+                  <div className="flex items-center justify-center gap-2 text-[#1B3C53]">
+                    <span className="text-blue-500">✓</span>
+                    <span>E-Book</span>
+                  </div>
+                  <div className="flex items-center justify-center gap-2 text-[#1B3C53]">
+                    <span className="text-blue-500">✓</span>
+                    <span>Prompt</span>
+                  </div>
+                  <div className="flex items-center justify-center gap-2 text-[#1B3C53]">
+                    <span className="text-blue-500">✓</span>
+                    <span>Jadwal</span>
+                  </div>
+                </div>
+                <div className="text-center mb-6">
+                  <div className="text-sm text-[#1B3C53]/70 mb-2">Harga</div>
+                  <div className="text-4xl font-bold text-[#1B3C53]">49K</div>
+                </div>
+                <motion.button
+                  type="button"
+                  whileHover={{ y: -2, scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="w-full bg-[#1B3C53] text-white font-semibold py-3 px-4 rounded-xl hover:bg-[#1B3C53]/90 transition-colors"
+                  onClick={() => {
+                    const message = encodeURIComponent("Halo, saya tertarik dengan paket BASIC E-book Skripsi 7 Hari (39K).");
+                    window.open(`https://wa.me/${sanitizedNumber}?text=${message}`, "_blank", "noopener,noreferrer");
+                  }}
+                >
+                  💬 Pesan Sekarang
+                </motion.button>
+              </div>
+            </motion.div>
+
+            {/* Pro Tier */}
+            <motion.div
+              variants={fadeUp}
+              whileHover={{ y: -8, scale: 1.02 }}
+              className="relative rounded-2xl bg-gradient-to-br from-[#1B3C53] to-[#2a5e7d] border-2 border-[#1B3C53] p-6 shadow-xl hover:shadow-2xl transition-all duration-300 transform scale-105"
+            >
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                  POPULAR
+                </div>
+              </div>
+              <div className="text-center pt-4">
+                <h3 className="text-2xl font-bold text-white mb-4">PRO</h3>
+                <div className="space-y-3 mb-6">
+                  <div className="text-sm text-white/70">Feature:</div>
+                  <div className="flex items-center justify-center gap-2 text-white">
+                    <span className="text-green-300">✓</span>
+                    <span>Basic</span>
+                  </div>
+                  <div className="flex items-center justify-center gap-2 text-white">
+                    <span className="text-green-300">✓</span>
+                    <span>PPT Sidang</span>
+                  </div>
+                  <div className="flex items-center justify-center gap-2 text-white">
+                    <span className="text-green-300">✓</span>
+                    <span>Checklist</span>
+                  </div>
+                  <div className="flex items-center justify-center gap-2 text-white">
+                    <span className="text-green-300">✓</span>
+                    <span>Jadwal</span>
+                  </div>
+                </div>
+                <div className="text-center mb-6">
+                  <div className="text-sm text-white/70 mb-2">Harga</div>
+                  <div className="text-4xl font-bold text-white">59K</div>
+                </div>
+                <motion.button
+                  type="button"
+                  whileHover={{ y: -2, scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="w-full bg-white text-[#1B3C53] font-semibold py-3 px-4 rounded-xl border-2 border-[#1B3C53] hover:bg-[#1B3C53] hover:text-white transition-colors"
+                  onClick={() => {
+                    const message = encodeURIComponent("Halo, saya tertarik dengan paket PRO E-book Skripsi 7 Hari (59K).");
+                    window.open(`https://wa.me/${sanitizedNumber}?text=${message}`, "_blank", "noopener,noreferrer");
+                  }}
+                >
+                  💬 Pesan Sekarang
+                </motion.button>
+              </div>
+            </motion.div>
+
+            {/* Ultimate Tier */}
+            <motion.div
+              variants={fadeUp}
+              whileHover={{ y: -8, scale: 1.02 }}
+              className="relative rounded-2xl bg-gradient-to-br from-amber-50 to-yellow-100 border-2 border-amber-200 p-6 shadow-xl hover:shadow-2xl transition-all duration-300"
+            >
+              <div className="absolute -top-4 left-6">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center shadow-lg">
+                  <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                    <div className="w-4 h-4 bg-purple-500 rounded-full"></div>
+                  </div>
+                </div>
+              </div>
+              <div className="text-center pt-4">
+                <h3 className="text-2xl font-bold text-[#1B3C53] mb-4">ULTIMATE</h3>
+                <div className="space-y-3 mb-6">
+                  <div className="text-sm text-[#1B3C53]/70">Feature:</div>
+                  <div className="flex items-center justify-center gap-2 text-[#1B3C53]">
+                    <span className="text-blue-500">✓</span>
+                    <span>Semua Bonus</span>
+                  </div>
+                  <div className="flex items-center justify-center gap-2 text-[#1B3C53]">
+                    <span className="text-blue-500">✓</span>
+                    <span>Grup Telegram</span>
+                  </div>
+                  <div className="flex items-center justify-center gap-2 text-[#1B3C53]">
+                    <span className="text-blue-500">✓</span>
+                    <span>Extra Template Skripsi</span>
+                  </div>
+                </div>
+                <div className="text-center mb-6">
+                  <div className="text-sm text-[#1B3C53]/70 mb-2">Harga</div>
+                  <div className="text-4xl font-bold text-[#1B3C53]">89K</div>
+                </div>
+                <motion.button
+                  type="button"
+                  whileHover={{ y: -2, scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="w-full bg-[#1B3C53] text-white font-semibold py-3 px-4 rounded-xl hover:bg-[#1B3C53]/90 transition-colors"
+                  onClick={() => {
+                    const message = encodeURIComponent("Halo, saya tertarik dengan paket ULTIMATE E-book Skripsi 7 Hari (89K).");
+                    window.open(`https://wa.me/${sanitizedNumber}?text=${message}`, "_blank", "noopener,noreferrer");
+                  }}
+                >
+                  💬 Pesan Sekarang
+                </motion.button>
+              </div>
+            </motion.div>
+          </div>
+
+
         </div>
       </motion.section>
 
@@ -1045,7 +1244,7 @@ export default function Home() {
               className="mt-6 space-y-3 text-white/90"
             >
               <li>
-                ✅ <span className="font-semibold">eBook Lengkap</span> 7 Hari
+                ✅ <span className="font-semibold">E-book Lengkap</span> 7 Hari
                 Kelar Skripsi
               </li>
               <li>

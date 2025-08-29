@@ -54,14 +54,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://bantuanai.com"),
+  metadataBase: new URL("https://bantuanaiq.id"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "Bantuan AI - Platform Belajar Tools AI untuk Produktivitas",
     description: "Tempat Kamu belajar 'ngendaliin' AI biar kerjaan makin cepat, hidup makin gampang, dan masa depan terasa lebih dekat.",
-    url: "https://bantuanai.com",
+    url: "https://bantuanaiq.id",
     siteName: "Bantuan AI",
     images: [
       {

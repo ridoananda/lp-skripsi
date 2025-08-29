@@ -47,6 +47,16 @@ export default function CTASection() {
               🎓 Lihat ECourse
             </motion.a>
           </div>
+          <div className="mt-4">
+            <motion.a
+              href="/blog"
+              whileHover={{ y: -1, opacity: 0.9 }}
+              whileTap={{ scale: 0.98 }}
+              className="text-white/80 hover:text-white underline text-sm font-medium transition-colors"
+            >
+              📖 Baca artikel terbaru di blog kami →
+            </motion.a>
+          </div>
         </div>
         <motion.div variants={fadeUp} className="relative">
           <Image
