@@ -3,13 +3,19 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, MessageCircle } from "lucide-react";
 import Link from "next/link";
 
 import { fadeIn } from "@/lib/animations";
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const menuItems = [
+    { href: "#nilai", label: "Nilai" },
+    { href: "#produk", label: "Produk" },
+    { href: "#testimoni", label: "Testimoni" },
+  ];
 
   useEffect(() => {
     if (mobileOpen) {
@@ -46,54 +52,17 @@ export default function Header() {
           <span className="text-sm font-medium text-white">Bantuan AI</span>
         </div>
         <nav className="hidden md:flex items-center gap-6 text-white text-sm">
-          <motion.a
-            href="#nilai"
-            whileHover={{ y: -1, opacity: 0.9 }}
-            whileTap={{ scale: 0.98 }}
-            className="hover:underline"
-          >
-            Nilai
-          </motion.a>
-          <motion.a
-            href="#fitur"
-            whileHover={{ y: -1, opacity: 0.9 }}
-            whileTap={{ scale: 0.98 }}
-            className="hover:underline"
-          >
-            Fitur
-          </motion.a>
-          <motion.a
-            href="#keuntungan"
-            whileHover={{ y: -1, opacity: 0.9 }}
-            whileTap={{ scale: 0.98 }}
-            className="hover:underline"
-          >
-            Keuntungan
-          </motion.a>
-          <motion.a
-            href="#statistik"
-            whileHover={{ y: -1, opacity: 0.9 }}
-            whileTap={{ scale: 0.98 }}
-            className="hover:underline"
-          >
-            Statistik
-          </motion.a>
-          <motion.a
-            href="#produk"
-            whileHover={{ y: -1, opacity: 0.9 }}
-            whileTap={{ scale: 0.98 }}
-            className="hover:underline"
-          >
-            Produk
-          </motion.a>
-          <motion.a
-            href="#testimoni"
-            whileHover={{ y: -1, opacity: 0.9 }}
-            whileTap={{ scale: 0.98 }}
-            className="hover:underline"
-          >
-            Testimoni
-          </motion.a>
+          {menuItems.map((item) => (
+            <motion.a
+              key={item.href}
+              href={item.href}
+              whileHover={{ y: -1, opacity: 0.9 }}
+              whileTap={{ scale: 0.98 }}
+              className="hover:underline"
+            >
+              {item.label}
+            </motion.a>
+          ))}
           <motion.div
             whileHover={{ y: -1, opacity: 0.9 }}
             whileTap={{ scale: 0.98 }}
@@ -119,6 +88,25 @@ export default function Header() {
           <Menu size={22} />
         </button>
       </motion.header>
+
+      {/* Floating WhatsApp CTA Button */}
+      <motion.a
+        href="https://wa.me/6281234567890?text=Halo min! saya perlu bantuan"
+        target="_blank"
+        rel="noopener noreferrer"
+        initial={{ opacity: 0, scale: 0.8, y: 20 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ delay: 1, duration: 0.5 }}
+        whileHover={{ scale: 1.1, y: -5 }}
+        whileTap={{ scale: 0.95 }}
+        className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group"
+        aria-label="Hubungi kami via WhatsApp"
+      >
+        <MessageCircle size={24} className="group-hover:scale-110 transition-transform duration-300" />
+        <div className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-white text-gray-800 px-3 py-2 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap text-sm font-medium">
+          Hubungi WhatsApp
+        </div>
+      </motion.a>
 
       {mobileOpen && (
         <motion.div
@@ -163,48 +151,16 @@ export default function Header() {
               </button>
             </div>
             <div className="mt-4 grid gap-2 text-white">
-              <a
-                href="#nilai"
-                onClick={() => setMobileOpen(false)}
-                className="px-3 py-2 rounded-md hover:bg-white/10"
-              >
-                Nilai
-              </a>
-              <a
-                href="#fitur"
-                onClick={() => setMobileOpen(false)}
-                className="px-3 py-2 rounded-md hover:bg-white/10"
-              >
-                Fitur
-              </a>
-              <a
-                href="#keuntungan"
-                onClick={() => setMobileOpen(false)}
-                className="px-3 py-2 rounded-md hover:bg-white/10"
-              >
-                Keuntungan
-              </a>
-              <a
-                href="#statistik"
-                onClick={() => setMobileOpen(false)}
-                className="px-3 py-2 rounded-md hover:bg-white/10"
-              >
-                Statistik
-              </a>
-              <a
-                href="#produk"
-                onClick={() => setMobileOpen(false)}
-                className="px-3 py-2 rounded-md hover:bg-white/10"
-              >
-                Produk
-              </a>
-              <a
-                href="#testimoni"
-                onClick={() => setMobileOpen(false)}
-                className="px-3 py-2 rounded-md hover:bg-white/10"
-              >
-                Testimoni
-              </a>
+              {menuItems.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="px-3 py-2 rounded-md hover:bg-white/10"
+                >
+                  {item.label}
+                </a>
+              ))}
               <Link
                 href="/blog"
                 onClick={() => setMobileOpen(false)}
