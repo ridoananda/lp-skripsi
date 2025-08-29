@@ -29,14 +29,14 @@ export default function BlogPage() {
   const recentPosts = getRecentBlogPosts(3);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[#e6eef4]">
       {/* Page Header */}
-      <section className="bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white py-16">
+      <section className="bg-gradient-to-br from-[#1B3C53] via-[#2a5e7d] to-[#1B3C53] text-white py-16">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 font-hero-heading">
             Blog Bantuan AI
           </h1>
-          <p className="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed font-hero-sub">
             Temukan artikel terbaru tentang AI, produktivitas, dan tips menggunakan tools AI 
             untuk meningkatkan kinerja Anda dalam pekerjaan sehari-hari.
           </p>
@@ -59,7 +59,7 @@ export default function BlogPage() {
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl font-bold text-[#1B3C53] mb-4">
                 Artikel Unggulan
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -76,17 +76,17 @@ export default function BlogPage() {
       )}
 
       {/* All Posts Section */}
-      <section className="py-16">
+      <section className="py-16 bg-[#e6eef4]">
         <div className="container mx-auto px-4">
           <BlogList posts={allPosts} title="Semua Artikel" />
         </div>
       </section>
 
       {/* Recent Posts Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-[#edf3f7]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-[#1B3C53] mb-4">
               Artikel Terbaru
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">

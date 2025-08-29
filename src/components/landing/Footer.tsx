@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { fadeUp, stagger } from "@/lib/animations";
+import { Facebook, Instagram, Twitter, Youtube, Linkedin } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -29,9 +30,58 @@ export default function Footer() {
               />
               <span className="text-lg font-semibold">Bantuan AI</span>
             </div>
-            <p className="text-white/70 text-sm leading-relaxed">
+            <p className="text-white/70 text-sm leading-relaxed mb-4">
               Wadah edukasi digital yang menghadirkan e-book dan E-Course interaktif berbasis AI untuk membantu pembelajaran yang lebih efektif dan menyenangkan.
             </p>
+            
+            {/* Social Media Links */}
+            <div className="flex items-center gap-3">
+              <a 
+                href="https://facebook.com/bantuanai" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-8 h-8 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors group"
+                aria-label="Facebook Bantuan AI"
+              >
+                <Facebook className="w-4 h-4 text-white/70 group-hover:text-white transition-colors" />
+              </a>
+              <a 
+                href="https://instagram.com/bantuanai" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-8 h-8 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors group"
+                aria-label="Instagram Bantuan AI"
+              >
+                <Instagram className="w-4 h-4 text-white/70 group-hover:text-white transition-colors" />
+              </a>
+              <a 
+                href="https://twitter.com/bantuanai" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-8 h-8 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors group"
+                aria-label="Twitter Bantuan AI"
+              >
+                <Twitter className="w-4 h-4 text-white/70 group-hover:text-white transition-colors" />
+              </a>
+              <a 
+                href="https://youtube.com/@bantuanai" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-8 h-8 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors group"
+                aria-label="YouTube Bantuan AI"
+              >
+                <Youtube className="w-4 h-4 text-white/70 group-hover:text-white transition-colors" />
+              </a>
+              <a 
+                href="https://linkedin.com/company/bantuanai" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-8 h-8 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors group"
+                aria-label="LinkedIn Bantuan AI"
+              >
+                <Linkedin className="w-4 h-4 text-white/70 group-hover:text-white transition-colors" />
+              </a>
+            </div>
           </motion.div>
 
           {/* Quick Links */}

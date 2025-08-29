@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
+import { Footer } from "@/components/landing";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 
-  (typeof window !== 'undefined' ? `${window.location.protocol}//${window.location.host}` : "https://bantuanaiq.id");
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (typeof window !== "undefined"
+    ? `${window.location.protocol}//${window.location.host}`
+    : "https://bantuanaiq.id");
 
 export const metadata: Metadata = {
   metadataBase: siteUrl ? new URL(siteUrl) : undefined,
@@ -52,7 +56,10 @@ export const metadata: Metadata = {
 export default function AiSkripsiLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  return <>{children}</>;
+  return (
+    <>
+      {children}
+      <Footer />
+    </>
+  );
 }
-
-

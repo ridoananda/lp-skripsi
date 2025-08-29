@@ -24,7 +24,7 @@ export default function BlogNavbar() {
                 height={32}
                 className="w-8 h-8 rounded-lg"
               />
-              <span className="text-xl font-bold text-gray-900">Bantuan AI</span>
+              <span className="text-xl font-bold text-[#1B3C53]">Bantuan AI</span>
             </Link>
           </div>
 
@@ -32,21 +32,21 @@ export default function BlogNavbar() {
           <div className="hidden md:flex items-center space-x-8">
             <Link
               href="/"
-              className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+              className="text-gray-600 hover:text-[#1B3C53] px-3 py-2 rounded-md text-sm font-medium transition-colors"
             >
               <Home className="w-4 h-4 inline mr-2" />
               Beranda
             </Link>
             <Link
               href="/blog"
-              className="text-blue-600 hover:text-blue-700 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+              className="text-[#1B3C53] hover:text-[#2a5e7d] px-3 py-2 rounded-md text-sm font-medium transition-colors font-semibold"
             >
               <BookOpen className="w-4 h-4 inline mr-2" />
               Blog
             </Link>
             <Link
               href="/ai-skripsi-7-hari"
-              className="bg-blue-600 text-white hover:bg-blue-700 px-4 py-2 rounded-md text-sm font-medium transition-colors"
+              className="bg-[#1B3C53] text-white hover:bg-[#2a5e7d] px-4 py-2 rounded-md text-sm font-medium transition-colors"
             >
               Mulai Belajar
             </Link>
@@ -58,7 +58,7 @@ export default function BlogNavbar() {
               variant="ghost"
               size="sm"
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="text-gray-600 hover:text-gray-900"
+              className="text-gray-600 hover:text-[#1B3C53]"
             >
               {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </Button>
@@ -78,7 +78,7 @@ export default function BlogNavbar() {
             <Link
               href="/"
               onClick={() => setMobileOpen(false)}
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#1B3C53] hover:bg-[#e6eef4]"
             >
               <Home className="w-4 h-4 inline mr-2" />
               Beranda
@@ -86,7 +86,7 @@ export default function BlogNavbar() {
             <Link
               href="/blog"
               onClick={() => setMobileOpen(false)}
-              className="block px-3 py-2 rounded-md text-base font-medium text-blue-600 hover:text-blue-700 hover:bg-blue-50"
+              className="block px-3 py-2 rounded-md text-base font-medium text-[#1B3C53] hover:text-[#2a5e7d] hover:bg-[#e6eef4] font-semibold"
             >
               <BookOpen className="w-4 h-4 inline mr-2" />
               Blog
@@ -94,7 +94,7 @@ export default function BlogNavbar() {
             <Link
               href="/ai-skripsi-7-hari"
               onClick={() => setMobileOpen(false)}
-              className="block px-3 py-2 rounded-md text-base font-medium bg-blue-600 text-white hover:bg-blue-700"
+              className="block px-3 py-2 rounded-md text-base font-medium bg-[#1B3C53] text-white hover:bg-[#2a5e7d]"
             >
               Mulai Belajar
             </Link>

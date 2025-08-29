@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import BlogNavbar from '@/components/blog/BlogNavbar';
 import BlogFooter from '@/components/blog/BlogFooter';
+import { Footer } from '@/components/landing';
 
 export const metadata: Metadata = {
   title: {
@@ -36,7 +37,7 @@ export default function BlogLayout({
       <main>
         {children}
       </main>
-      <BlogFooter />
+      <Footer />
     </div>
   );
 }

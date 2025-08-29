@@ -22,7 +22,7 @@ export default function BlogCard({ post, featured = false }: BlogCardProps) {
       transition={{ duration: 0.5 }}
     >
       <Card className={`group relative overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${
-        featured ? 'ring-2 ring-blue-500' : ''
+        featured ? 'ring-1 ring-primary' : ''
       }`}>
       {/* Featured Badge */}
       {featured && (
@@ -102,7 +102,7 @@ export default function BlogCard({ post, featured = false }: BlogCardProps) {
 
         {/* Read More Button */}
         <div className="mt-6">
-          <Button asChild variant="outline" size="sm" className="w-full">
+          <Button asChild size="sm" className="w-full">
             <Link href={`/blog/${post.slug}`}>
               Baca Selengkapnya
               <svg
