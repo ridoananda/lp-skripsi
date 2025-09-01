@@ -708,7 +708,7 @@ export default function Home() {
                   <div className="h-[300px] sm:h-[380px] md:h-[500px] bg-[linear-gradient(120deg,_#dbeafe_0%,_#ede9fe_50%,_#d1fae5_100%)] grid place-items-center">
                     <Image
                       src="/images/example-section/cover-hari-1.webp"
-                      alt="Example cover day 1"
+                      alt="E-book cover day 1"
                       width={800}
                       height={600}
                       className="w-full h-full object-contain"
@@ -726,27 +726,8 @@ export default function Home() {
                 >
                   <div className="h-[300px] sm:h-[380px] md:h-[500px] bg-[linear-gradient(120deg,_#fef3c7_0%,_#ede9fe_50%,_#cffafe_100%)] grid place-items-center">
                     <Image
-                      src="/images/example-section/example-hari-1.webp"
-                      alt="Example page day 1"
-                      width={800}
-                      height={600}
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-                  <div className="absolute bottom-3 left-3 px-3 py-1 rounded-full text-xs font-medium bg-black/70 text-white">
-                    Halaman E-book Hari 1
-                  </div>
-                </motion.div>
-
-                <motion.div
-                  variants={fadeUp}
-                  whileHover={{ y: -4, scale: 1.01 }}
-                  className="relative rounded-2xl bg-white border border-black/10 shadow-lg overflow-hidden min-w-[280px] sm:min-w-[360px] md:min-w-[420px] snap-start"
-                >
-                  <div className="h-[300px] sm:h-[380px] md:h-[500px] bg-[linear-gradient(120deg,_#ede9fe_0%,_#d1fae5_50%,_#fee2e2_100%)] grid place-items-center">
-                    <Image
                       src="/images/example-section/cover-hari-2.webp"
-                      alt="Example cover day 2"
+                      alt="E-book cover day 2"
                       width={800}
                       height={600}
                       className="w-full h-full object-contain"
@@ -762,17 +743,36 @@ export default function Home() {
                   whileHover={{ y: -4, scale: 1.01 }}
                   className="relative rounded-2xl bg-white border border-black/10 shadow-lg overflow-hidden min-w-[280px] sm:min-w-[360px] md:min-w-[420px] snap-start"
                 >
-                  <div className="h-[300px] sm:h-[380px] md:h-[500px] bg-[linear-gradient(120deg,_#bae6fd_0%,_#ede9fe_50%,_#d1fae5_100%)] grid place-items-center">
+                  <div className="h-[300px] sm:h-[380px] md:h-[500px] bg-[linear-gradient(120deg,_#ede9fe_0%,_#d1fae5_50%,_#fee2e2_100%)] grid place-items-center">
                     <Image
-                      src="/images/example-section/example-hari-2.webp"
-                      alt="Example page day 2"
+                      src="/images/example-section/cover-hari-3.webp"
+                      alt="E-book cover day 3"
                       width={800}
                       height={600}
                       className="w-full h-full object-contain"
                     />
                   </div>
                   <div className="absolute bottom-3 left-3 px-3 py-1 rounded-full text-xs font-medium bg-black/70 text-white">
-                    Halaman E-book Hari 2
+                    Cover Hari 3
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  variants={fadeUp}
+                  whileHover={{ y: -4, scale: 1.01 }}
+                  className="relative rounded-2xl bg-white border border-black/10 shadow-lg overflow-hidden min-w-[280px] sm:min-w-[360px] md:min-w-[420px] snap-start"
+                >
+                  <div className="h-[300px] sm:h-[380px] md:h-[500px] bg-[linear-gradient(120deg,_#bae6fd_0%,_#ede9fe_50%,_#d1fae5_100%)] grid place-items-center">
+                    <Image
+                      src="/images/example-section/cover.webp"
+                      alt="E-book main cover"
+                      width={800}
+                      height={600}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  <div className="absolute bottom-3 left-3 px-3 py-1 rounded-full text-xs font-medium bg-black/70 text-white">
+                    Cover
                   </div>
                 </motion.div>
               </div>
@@ -1015,7 +1015,7 @@ export default function Home() {
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                 <div>
                   <div className="font-semibold text-lg">
-                    💎 Total value Rp 500.000, sekarang cuma 99K!
+                    💎 Total value Rp 500.000, sekarang cuma 89K!
                   </div>
                   <div className="text-sm text-[#1B3C53]/70">
                     Dapatkan semua bonus + E-book dalam sekali beli.
