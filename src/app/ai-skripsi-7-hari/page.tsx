@@ -890,7 +890,7 @@ export default function Home() {
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                 <div>
                   <div className="font-semibold text-lg ">
-                    Tersisa hanya 99K untuk akses semua materi + bonusnya!
+                    Tersisa hanya 89K untuk akses semua materi + bonusnya!
                   </div>
                   <div className="text-sm text-[#1B3C53]/70">
                     Harga bisa naik kapan saja.
