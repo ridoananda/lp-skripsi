@@ -16,4 +16,3 @@ export const stagger = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.08, delayChildren: 0.1 } },
 };
-

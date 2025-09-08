@@ -1,0 +1,9 @@
+export { default as Header } from "./Header";
+export { default as Hero } from "./Hero";
+export { default as Problem } from "./Problem";
+export { default as Solution } from "./Solution";
+export { default as Preview } from "./Preview";
+export { default as Testimonial } from "./Testimonial";
+export { default as Bonus } from "./Bonus";
+export { default as Pricing } from "./Pricing";
+export { default as CTA } from "./CTA";
