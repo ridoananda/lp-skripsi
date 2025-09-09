@@ -17,13 +17,13 @@ export default function FAQSection() {
         <div className="text-center max-w-3xl mx-auto">
           <motion.h2
             variants={fadeUp}
-            className="font-hero-heading font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight text-white"
+            className="font-hero-heading font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight text-primary"
           >
             FAQ Tools AI
           </motion.h2>
           <motion.p
             variants={fadeUp}
-            className="mt-3 text-base sm:text-lg font-hero-sub text-white"
+            className="mt-3 text-base sm:text-lg font-hero-sub"
           >
             Pertanyaan seputar belajar tools AI dan produktivitas.
           </motion.p>
